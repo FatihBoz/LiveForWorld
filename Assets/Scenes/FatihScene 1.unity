@@ -564,6 +564,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 622706983, guid: 910177ec26b76c14996c2d53627a6def, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 7072444061591351794, guid: 910177ec26b76c14996c2d53627a6def, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -809,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 232729082}
-  prefab: {fileID: 1303456140077118280, guid: 5c28236a036ebfe4c9711309c3c054fb, type: 3}
+  prefab: {fileID: -5469308441507041664, guid: 5388a2fd20c031f42a726dece727aedb, type: 3}
   spawnCount: 50
   distance: 50
 --- !u!4 &1430614726

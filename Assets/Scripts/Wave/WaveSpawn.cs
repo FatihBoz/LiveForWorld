@@ -10,18 +10,45 @@ public class WaveSpawn : MonoBehaviour
     public WaveObj prefab;
     public int spawnCount=10;
     public float distance;
+
+    private float spawnTime=0;
+    private float spawnCooldown=.5f;
+
+    private Vector3[] pos;
+    
+    private int index;
     void Start()
     {
-        
-        for (int i = 0; i < spawnCount; i++)
+        pos=new Vector3[]
+        {new Vector3(1.5f, 1.2f, 10f),
+            new Vector3( 0, 0f, 10f)
+        ,new Vector3(-0.5f, 1.2f, 10f)
+        ,new Vector3(1.2f, 0f, 10f)
+        };
+        index=0;
+/*         for (int i = 0; i < spawnCount; i++)
         {
             WaveObj spawnedObject = Instantiate(prefab);
             spawnedObject.target=player;
             float x = Mathf.Cos((2*Mathf.PI/spawnCount)*i)*distance;
             float z = Mathf.Sin((2*Mathf.PI/spawnCount)*i)*distance;
             spawnedObject.transform.position= new Vector3(x,transform.position.y,z);
-        }
+        } */
 
+
+    }
+
+    public void Update()
+    {
+        if (Time.time>=spawnCooldown+spawnTime)
+        {
+            spawnTime=Time.time;
+            Vector3 v3Pos = Camera.main.ViewportToWorldPoint(pos[Random.Range(0,pos.Length)]);
+            v3Pos.y=1f;
+            WaveObj spawnedObject = Instantiate(prefab);
+            spawnedObject.target=player;
+            spawnedObject.transform.position= v3Pos;
+        }
     }
 
 }
