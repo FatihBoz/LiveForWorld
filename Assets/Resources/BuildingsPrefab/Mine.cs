@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Mine : Building
 {
-    public float productionInterval = 1f;
     private float productionTimer = 0f;
 
     // Start is called before the first frame update
@@ -23,7 +22,7 @@ public class Mine : Building
         productionTimer += Time.deltaTime;
 
         // Zamanlayýcý belirlenen aralýða ulaþtýysa üretimi gerçekleþtir
-        if (productionTimer >= productionInterval)
+        if (productionTimer >= level)
         {
             ProduceResource();
             productionTimer = 0f; // Zamanlayýcýyý sýfýrla
@@ -38,14 +37,14 @@ public class Mine : Building
     void ProduceResource()
     {
         // Her üretimde oyuncu kaynaklarýný artýr
-        PlayerProperties.Instance.ChangeOreAmount(1f); // Saniyede 1 artýr
+        PlayerProperties.Instance.ChangeOreAmount(level); // Saniyede 1 artýr
     }
 
     public override void UpgradeBuilding()
     {
         if (level < 3 && PlayerProperties.Instance.getOre() > cost)
         {
-            PlayerProperties.Instance.ChangeOreAmount(cost);
+            PlayerProperties.Instance.ChangeOreAmount(-cost);
 
             level++;
 

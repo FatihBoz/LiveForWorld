@@ -12,7 +12,7 @@ public class Turret : Building
     {
         if (level < 3 && PlayerProperties.Instance.getOre() > cost)
         {
-            PlayerProperties.Instance.ChangeOreAmount(cost);
+            PlayerProperties.Instance.ChangeOreAmount(-cost);
 
             level++;
 

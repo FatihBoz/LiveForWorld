@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class ConstructionSite : MonoBehaviour
 {
-    public bool isActive = false;
+    bool isActive = false;
+    bool isPressed = false;
+
+
     public GameObject buildingPrefab;
 
-    bool isPressed = false;
 
     //public GameObject BuildUI;
 

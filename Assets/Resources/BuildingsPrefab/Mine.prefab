@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mine
       objectReference: {fileID: 0}
+    - target: {fileID: 7985788116258030146, guid: 5143cb4201323064489c3f0db867f110, type: 3}
+      propertyPath: m_TagString
+      value: Mine
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 464866884431577242, guid: 5143cb4201323064489c3f0db867f110, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5143cb4201323064489c3f0db867f110, type: 3}
@@ -76,5 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  maxHealth: 100
   cost: 50
   level: 1
