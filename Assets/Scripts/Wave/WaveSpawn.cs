@@ -7,7 +7,7 @@ public class WaveSpawn : MonoBehaviour
     public static WaveSpawn Instance { get; private set; }
     private int waveObjCount;
     public Transform player;
-    public WaveObj[] prefabs;
+    public Enemy[] prefabs;
     public int spawnCount=10;
     public float distance;
     private float spawnTime=0;
@@ -62,7 +62,7 @@ public class WaveSpawn : MonoBehaviour
                 spawnTime=Time.time;
                 Vector3 v3Pos = Camera.main.ViewportToWorldPoint(pos[Random.Range(0,pos.Length)]);
                 v3Pos.y=1f;
-                WaveObj spawnedObject = Instantiate(prefabs[Random.Range(0,prefabs.Length)]);
+                Enemy spawnedObject = Instantiate(prefabs[Random.Range(0,prefabs.Length)]);
                 spawnedObject.SetTarget(player);
                 spawnedObject.transform.position= v3Pos;
                 waveObjCount++;

@@ -6,13 +6,13 @@ public abstract class Wave
 {
     public int Count{get;private set;}
     public Transform Target{get;private set;}
-    public WaveObj Prefab{get;private set;}
+    public Enemy Prefab{get;private set;}
 
-    public Wave(Transform target, WaveObj prefab,int count)
+    public Wave(Transform target, Enemy prefab,int count)
    {
     Target=target;
     Prefab=prefab;
     Count=count;
    }
-   public abstract List<WaveObj> Spawn();
+   public abstract List<Enemy> Spawn();
 }

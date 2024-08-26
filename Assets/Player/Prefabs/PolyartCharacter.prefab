@@ -1802,6 +1802,7 @@ GameObject:
   - component: {fileID: 622706983}
   - component: {fileID: 622706984}
   - component: {fileID: 5637806208143170205}
+  - component: {fileID: 1230956350}
   m_Layer: 7
   m_Name: PolyartCharacter
   m_TagString: Player
@@ -1957,6 +1958,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5637806208143170205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072444061591711186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46abce99d7ef8bd44a14a91b1d9daf21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletSpeed: 5
+  BulletPrefab: {fileID: 713030411001726764, guid: 2246bec51bf203f4eb4b41ecee204501, type: 3}
+  ShootPoint: {fileID: 554334046}
+--- !u!114 &1230956350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
