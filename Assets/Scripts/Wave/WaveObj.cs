@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class WaveObj : MonoBehaviour
 {
     public Transform target;
-    public NavMeshAgent agent;
+    private NavMeshAgent agent;
     public void Start()
     {
         agent=GetComponent<NavMeshAgent>();

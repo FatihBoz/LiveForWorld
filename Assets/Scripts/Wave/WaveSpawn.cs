@@ -26,6 +26,11 @@ public class WaveSpawn : MonoBehaviour
         ,new Vector3(1.2f, 0f, 10f)
         };
         index=0;
+
+
+        CircleWave circleWave = new CircleWave(player,prefab,spawnCount,distance);
+        circleWave.Spawn();
+
 /*         for (int i = 0; i < spawnCount; i++)
         {
             WaveObj spawnedObject = Instantiate(prefab);
