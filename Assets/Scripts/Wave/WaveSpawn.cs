@@ -11,13 +11,10 @@ public class WaveSpawn : MonoBehaviour
     public int spawnCount=10;
     public float distance;
     private float spawnTime=0;
-    private float spawnCooldown=.5f;
+    private float spawnCooldown=5f;
     private Vector3[] pos;
-    private int index;
     private void Awake() 
     { 
-    // If there is an instance, and it's not me, delete myself.
-        
         if (Instance != null && Instance != this) 
         { 
             Destroy(this); 
@@ -26,6 +23,8 @@ public class WaveSpawn : MonoBehaviour
         { 
             Instance = this; 
         } 
+
+
     }
     void Start()
     {
@@ -35,7 +34,6 @@ public class WaveSpawn : MonoBehaviour
         ,new Vector3(-0.5f, 1.2f, 10f)
         ,new Vector3(1.2f, 0f, 10f)
         };
-        index=0;
 
         CircleWave circleWave = new CircleWave(player,prefab,spawnCount,distance);
         waveObjCount=circleWave.Spawn().Count;
@@ -61,7 +59,7 @@ public class WaveSpawn : MonoBehaviour
                 Vector3 v3Pos = Camera.main.ViewportToWorldPoint(pos[Random.Range(0,pos.Length)]);
                 v3Pos.y=1f;
                 WaveObj spawnedObject = Instantiate(prefab);
-                spawnedObject.target=player;
+                spawnedObject.SetTarget(player);
                 spawnedObject.transform.position= v3Pos;
                 waveObjCount++;
             }

@@ -5,14 +5,18 @@ using UnityEngine.AI;
 
 public class WaveObj : MonoBehaviour
 {
-    public Transform target;
-    private NavMeshAgent agent;
-    public void Start()
+    protected Transform target;
+    protected NavMeshAgent agent;
+    public void Awake()
     {
         agent=GetComponent<NavMeshAgent>();
     }
-    public void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         agent.SetDestination(target.position);
+    }
+    public void SetTarget(Transform target)
+    {
+        this.target=target;
     }
 }

@@ -17,7 +17,7 @@ public override List<WaveObj> Spawn()
         for (int i = 0; i < Count; i++)
         {
             WaveObj spawnedWaveObj=Object.Instantiate(Prefab);
-            spawnedWaveObj.target=Target;
+            spawnedWaveObj.SetTarget(Target);
             float x = Target.position.x+Mathf.Cos(i*2*Mathf.PI/Count)*distance;
             float z = Target.position.y+Mathf.Sin(i*2*Mathf.PI/Count)*distance;
             spawnedWaveObj.transform.position=new Vector3(x,1f,z);
