@@ -16,7 +16,14 @@ public class ConstructionSite : MonoBehaviour
 
     private void ActivateBuilding(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        isActive = true;
-        Instantiate(buildingPrefab, transform.position, Quaternion.identity);
+        Debug.Log("Activatiing buikding");
+        if(PlayerProperties.Instance.getOre() > buildingPrefab.GetComponent<Building>().cost){
+            Debug.Log("ise girdi");
+            PlayerProperties.Instance.ChangeOreAmount(buildingPrefab.GetComponent<Building>().cost);
+            isActive = true;
+            Destroy(this.gameObject);
+            Instantiate(buildingPrefab, transform.position, Quaternion.identity);
+        }
+
     }
 }
