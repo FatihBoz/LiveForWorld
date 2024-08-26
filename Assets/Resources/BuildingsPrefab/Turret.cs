@@ -75,10 +75,15 @@ public class Turret : Building
     }
 
 
-    void TurnPosition(GameObject target)
+    void TurnPosition(Vector3 target)
     {
 
     }
 
-   
+   void StartAttack(GameObject attack)
+    {
+        TurnPosition(attack.transform.position);
+
+        Instantiate(TurretBulletPrefab, transform.position, Quaternion.identity);
+    }
 }
