@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext context)
     {
+        animator.SetTrigger("Shoot");
         GameObject bullet = Instantiate(BulletPrefab, ShootPoint.position, transform.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.rotation.x * BulletSpeed,0, bullet.transform.rotation.z * BulletSpeed);
     }
