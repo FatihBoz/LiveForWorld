@@ -53,7 +53,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7985788116258030146, guid: 5143cb4201323064489c3f0db867f110, type: 3}
       propertyPath: m_Name
-      value: Building (2)
+      value: Mine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 464866884431577242, guid: 5143cb4201323064489c3f0db867f110, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5143cb4201323064489c3f0db867f110, type: 3}
+--- !u!1 &9187395785767556075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7985788116258030146, guid: 5143cb4201323064489c3f0db867f110, type: 3}
+  m_PrefabInstance: {fileID: 1248368122532991401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2716497741349012819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187395785767556075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe3e4dbe47fc07438703a1328ecc253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  cost: 50
+  level: 1

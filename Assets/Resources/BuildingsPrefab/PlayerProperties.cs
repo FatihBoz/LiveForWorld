@@ -7,6 +7,10 @@ public class PlayerProperties : MonoBehaviour
 {
     float ore = 100;
 
+    float mainBuildingHealth = 500;
+
+    float playerHealth = 200;
+
     public static PlayerProperties Instance;
 
     public TextMeshProUGUI OreText;
@@ -37,7 +41,7 @@ public class PlayerProperties : MonoBehaviour
 
     void UpdateText()
     {
-        OreText.text += ore.ToString();
+        OreText.text = ore.ToString();
 
     }
 

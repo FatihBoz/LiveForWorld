@@ -6,6 +6,8 @@ public abstract class Building : MonoBehaviour
 {
     public int health = 100;
 
+    public int maxHealth = 100;
+
     public int cost = 50;
 
     public int level = 1;
