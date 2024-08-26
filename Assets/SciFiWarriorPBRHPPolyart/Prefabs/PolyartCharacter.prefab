@@ -1949,6 +1949,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b3fc029d-71f8-4330-bb4b-4b029582693a
     m_ActionName: Player/Shoot[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a8a9334c-1f14-4178-b224-408319472578
+    m_ActionName: Player/ActivateBuilding[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1970,7 +1974,7 @@ MonoBehaviour:
   RotationSpeed: 5
   BulletSpeed: 5
   BulletPrefab: {fileID: 713030411001726764, guid: 2246bec51bf203f4eb4b41ecee204501, type: 3}
-  ShootPoint: {fileID: 0}
+  ShootPoint: {fileID: 554334046}
 --- !u!114 &622706984
 MonoBehaviour:
   m_ObjectHideFlags: 0

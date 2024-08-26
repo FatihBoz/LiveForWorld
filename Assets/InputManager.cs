@@ -17,6 +17,8 @@ public class InputManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            input = new PlayerControl();
+            input.Player.Enable();
             DontDestroyOnLoad(gameObject); // Oyun boyunca saklanmasýný saðla
         }
         else
@@ -24,8 +26,7 @@ public class InputManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        input = new PlayerControl();
-        input.Player.Enable();
+
     }
 
     public Vector2 GetMoveDirection()
