@@ -1,5 +1,6 @@
 using Cinemachine;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameObject BulletPrefab;
     public Transform ShootPoint;
 
+    private InputManager input;
     private Rigidbody rb;
     private Camera mainCamera;
     private Animator animator;
@@ -19,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-
+        input = GetComponent<InputManager>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -27,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        InputManager.Instance.input.Player.Shoot.performed += Shoot;
+        input.input.Player.Shoot.performed += Shoot;
 
         CinemachineVirtualCamera vcam = FindObjectOfType<CinemachineVirtualCamera>();
 
@@ -47,13 +49,13 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        moveDirection = InputManager.Instance.GetMoveDirection();
+        moveDirection = input.GetMoveDirection();
         rb.velocity = new Vector3(moveDirection.x * MoveSpeed, 0, moveDirection.y * MoveSpeed);
     }
 
     private void Rotate()
     {
-        Vector2 mousePosition = InputManager.Instance.GetMousePosition();
+        Vector2 mousePosition = input.GetMousePosition();
         Ray ray = mainCamera.ScreenPointToRay(mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit))
