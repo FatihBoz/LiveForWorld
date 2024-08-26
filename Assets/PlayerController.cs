@@ -1,15 +1,18 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class PlayerController : MonoBehaviour
 {
     public float MoveSpeed = 5f;
     public float RotationSpeed = 5f;
+    public float BulletSpeed = 5f;
+    public GameObject BulletPrefab;
+    public Transform ShootPoint;
 
-    public PlayerControl input;
+    private InputManager inputManager;
     private Rigidbody rb;
     private Camera mainCamera;
     private Animator animator;
@@ -17,9 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        input = new PlayerControl();
-        input.Player.Enable();
 
+        inputManager = GetComponent<InputManager>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -27,38 +29,32 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        inputManager.input.Player.Shoot.performed += Shoot;
+
         CinemachineVirtualCamera vcam = FindObjectOfType<CinemachineVirtualCamera>();
 
         if (vcam != null)
         {
             vcam.Follow = transform;
         }
+
+        Cursor.visible = false;
     }
 
-    private Vector2 GetMoveDirection()
+    private void Shoot(InputAction.CallbackContext context)
     {
-        Vector2 moveDirection = input.Player.Move.ReadValue<Vector2>();
-
-        return moveDirection.normalized;
+        throw new NotImplementedException();
     }
-
-    private Vector2 GetMousePosition()
-    {
-        Vector2 mousePosition = input.Player.MousePosition.ReadValue<Vector2>();
-
-        return mousePosition;
-    }
-
 
     private void Move()
     {
-        moveDirection = GetMoveDirection();
+        moveDirection = inputManager.GetMoveDirection();
         rb.velocity = new Vector3(moveDirection.x * MoveSpeed, 0, moveDirection.y * MoveSpeed);
     }
 
     private void Rotate()
     {
-        Vector2 mousePosition = GetMousePosition();
+        Vector2 mousePosition = inputManager.GetMousePosition();
         Ray ray = mainCamera.ScreenPointToRay(mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit))
