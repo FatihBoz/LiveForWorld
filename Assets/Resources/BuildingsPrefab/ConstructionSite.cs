@@ -6,7 +6,7 @@ using UnityEngine;
 public class ConstructionSite : MonoBehaviour
 {
     public bool isActive = false;
-    public string buildingPrefabName;
+    public GameObject buildingPrefab;
 
 
     private void Start()
@@ -17,7 +17,6 @@ public class ConstructionSite : MonoBehaviour
     private void ActivateBuilding(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         Debug.Log("çalýþtýr çalýþtý");
-        GameObject buildingPrefab = Resources.Load<GameObject>("BuildingsPrefabs/" + buildingPrefabName);
         isActive = true;
         Instantiate(buildingPrefab, transform.position, Quaternion.identity);
     }
