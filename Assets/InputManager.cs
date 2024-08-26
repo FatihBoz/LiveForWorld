@@ -9,31 +9,15 @@ public class InputManager : MonoBehaviour
     public PlayerControl input { get; private set; }
 
 
-    public static InputManager Instance;
-
-
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            input = new PlayerControl();
-            input.Player.Enable();
-            DontDestroyOnLoad(gameObject); // Oyun boyunca saklanmasýný saðla
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        input = new PlayerControl();
+        input.Player.Enable();
 
     }
 
     public Vector2 GetMoveDirection()
     {
-
-        Debug.Log("gET mOVE ÇALOÝÞTI");
-
         Vector2 moveDirection = input.Player.Move.ReadValue<Vector2>();
         Debug.Log("gET MOUSE ÇALOÝÞTI : " + moveDirection);
 
