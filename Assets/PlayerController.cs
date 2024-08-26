@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public GameObject BulletPrefab;
     public Transform ShootPoint;
 
-    private InputManager inputManager;
     private Rigidbody rb;
     private Camera mainCamera;
     private Animator animator;
@@ -21,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
 
-        inputManager = GetComponent<InputManager>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -48,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        moveDirection = inputManager.GetMoveDirection();
+        moveDirection = InputManager.Instance.input.GetMoveDirection();
         rb.velocity = new Vector3(moveDirection.x * MoveSpeed, 0, moveDirection.y * MoveSpeed);
     }
 

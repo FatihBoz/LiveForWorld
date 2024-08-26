@@ -53,6 +53,15 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateBuilding"",
+                    ""type"": ""Button"",
+                    ""id"": ""a8a9334c-1f14-4178-b224-408319472578"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6ccbc1f-09cf-49f8-9932-f88f962da2d7"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateBuilding"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +163,7 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_ActivateBuilding = m_Player.FindAction("ActivateBuilding", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -205,6 +226,7 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_MousePosition;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_ActivateBuilding;
     public struct PlayerActions
     {
         private @PlayerControl m_Wrapper;
@@ -212,6 +234,7 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @ActivateBuilding => m_Wrapper.m_Player_ActivateBuilding;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -230,6 +253,9 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @ActivateBuilding.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateBuilding;
+                @ActivateBuilding.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateBuilding;
+                @ActivateBuilding.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateBuilding;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -243,6 +269,9 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @ActivateBuilding.started += instance.OnActivateBuilding;
+                @ActivateBuilding.performed += instance.OnActivateBuilding;
+                @ActivateBuilding.canceled += instance.OnActivateBuilding;
             }
         }
     }
@@ -252,5 +281,6 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnActivateBuilding(InputAction.CallbackContext context);
     }
 }
