@@ -136,4 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceBetweenTarget: 10
   bulletPrefab: {fileID: 713030411001726764, guid: 57e8bf4a9d1cbdb4cb1de55a001bd34c, type: 3}
-  attackCooldown: 1
+  attackCooldown: 5

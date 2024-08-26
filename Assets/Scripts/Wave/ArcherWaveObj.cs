@@ -8,7 +8,7 @@ public class ArcherWaveObj : WaveObj
 
     public GameObject bulletPrefab;
 
-    public float attackCooldown=5f;
+    public float attackCooldown=15f;
     private float attackTime=0;
     public void Start()
     {
