@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6345858995144798089}
   - component: {fileID: 6238485272570118927}
   - component: {fileID: 2370125103263366475}
-  - component: {fileID: -5469308441507041664}
   - component: {fileID: -6894489131903948988}
+  - component: {fileID: -8843279796334985761}
   m_Layer: 6
-  m_Name: WaveObj 1
+  m_Name: ArcherWaver
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 14c2c5b57b6cb104ca91156194f53ceb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,19 +100,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5469308441507041664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8149258880625951347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ebbbe1234f59c4a94e778061f54926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!195 &-6894489131903948988
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -135,3 +122,18 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-8843279796334985761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8149258880625951347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed60dfaf1cbd50e42afa120f811c7e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceBetweenTarget: 10
+  bulletPrefab: {fileID: 713030411001726764, guid: 57e8bf4a9d1cbdb4cb1de55a001bd34c, type: 3}
+  attackCooldown: 5
