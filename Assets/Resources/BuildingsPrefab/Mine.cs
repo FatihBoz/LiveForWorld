@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Mine : Building
 {
+    
     // Start is called before the first frame update
     void Start()
     {
-        this.level = 1;
+        level = 1;
+
     }
 
     // Update is called once per frame
@@ -21,11 +23,22 @@ public class Mine : Building
         // Zamanla üretimi artýr
         PlayerProperties.Instance.ChangeOreAmount(level * Time.deltaTime);
     }
-
-
-
-    void ChangeBuildingProperties()
+    
+    public override void UpgradeBuilding()
     {
+        if (level < 3)
+        {
+            PlayerProperties.Instance.ChangeOreAmount(cost);
 
+            level++;
+
+            health += 50;
+            Debug.Log("Maden seviyesi yükseltildi! Yeni seviye: " + level);
+        }
+        else
+        {
+            Debug.Log("Bina zaten maksimum seviyede.");
+        }
     }
+
 }
