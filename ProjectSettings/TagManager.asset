@@ -7,6 +7,7 @@ TagManager:
   - Mine
   - Main
   - Turret
+  - Enemy
   layers:
   - Default
   - TransparentFX
