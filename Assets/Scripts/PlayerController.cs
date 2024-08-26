@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        InputManager.Instance.input.Player.Shoot.performed += Shoot;
-
         CinemachineVirtualCamera vcam = FindObjectOfType<CinemachineVirtualCamera>();
 
         if (vcam != null)
@@ -37,14 +35,6 @@ public class PlayerController : MonoBehaviour
         }
 
         Cursor.visible = false;
-    }
-
-    private void Shoot(InputAction.CallbackContext context)
-    {
-        ScreenShake.Instance.TriggerShake();
-        animator.SetTrigger("Shoot");
-        GameObject bullet = Instantiate(BulletPrefab, ShootPoint.position, transform.rotation);
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.rotation.x * BulletSpeed,0, bullet.transform.rotation.z * BulletSpeed);
     }
 
     private void Move()
