@@ -9,8 +9,21 @@ public class InputManager : MonoBehaviour
     public PlayerControl input { get; private set; }
 
 
-    void Awake()
+    public static InputManager Instance;
+
+
+    private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Oyun boyunca saklanmasýný saðla
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         input = new PlayerControl();
         input.Player.Enable();
     }
