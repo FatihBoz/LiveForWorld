@@ -10,7 +10,8 @@ public class Projectile : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>(); 
+        rb = GetComponent<Rigidbody>();
+        Destroy(this.gameObject, 1f);
     }
     private void FixedUpdate()
     {
