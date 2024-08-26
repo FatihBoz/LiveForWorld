@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        InputManager.Instance.input.Player.Shoot.performed += Shoot;
+       // InputManager.Instance.input.Player.Shoot.performed += Shoot;
 
         CinemachineVirtualCamera vcam = FindObjectOfType<CinemachineVirtualCamera>();
 

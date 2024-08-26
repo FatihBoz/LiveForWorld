@@ -722,6 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1151536606}
   - component: {fileID: 1151536605}
+  - component: {fileID: 1151536607}
   m_Layer: 0
   m_Name: VirtualCamera
   m_TagString: Untagged
@@ -783,6 +784,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+--- !u!114 &1151536607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151536604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b420643c36c524ab626a4e87b7fdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.5
+  shakeAmplitude: 2
+  shakeFrequency: 2
 --- !u!1 &1230956343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7072444061591711186, guid: 910177ec26b76c14996c2d53627a6def, type: 3}

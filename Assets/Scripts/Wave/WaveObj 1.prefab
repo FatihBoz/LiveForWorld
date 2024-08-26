@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6894489131903948988}
   m_Layer: 6
   m_Name: WaveObj 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  agent: {fileID: 0}
 --- !u!195 &-6894489131903948988
 NavMeshAgent:
   m_ObjectHideFlags: 0
