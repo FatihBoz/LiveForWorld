@@ -107,7 +107,7 @@ MonoBehaviour:
   timeBetweenPathUpdates: 0.5
   attackRange: 2.5
   attackDamage: 5
-  bloodEffect: {fileID: 5351300510799967930, guid: c558fbf1eca7e23429b16a58e529ebb6, type: 3}
+  bloodEffect: {fileID: 5351300510799967930, guid: c8fb92ad672125447b9afb795388c8a1, type: 3}
 --- !u!195 &218771666
 NavMeshAgent:
   m_ObjectHideFlags: 0

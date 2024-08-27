@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 206199117}
   - component: {fileID: 206199116}
   - component: {fileID: 206199119}
+  - component: {fileID: 412632426}
   m_Layer: 6
   m_Name: Polyart_Golem
   m_TagString: Enemy
@@ -405,10 +406,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.8345363
+  m_Radius: 1.4050474
   m_Height: 6.667787
   m_Direction: 1
-  m_Center: {x: -0.0446136, y: 1.7211154, z: -0.1566112}
+  m_Center: {x: -0.0446136, y: 1.7211154, z: 0.2728777}
 --- !u!114 &206199116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +428,7 @@ MonoBehaviour:
   timeBetweenPathUpdates: 0.5
   attackRange: 4
   attackDamage: 20
+  bloodEffect: {fileID: 5351300510799967930, guid: 6a3a8d6bf34ef574c8025cae25ea4b54, type: 3}
 --- !u!195 &206199119
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -449,6 +451,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!64 &412632426
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077356408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1099011281
 GameObject:
   m_ObjectHideFlags: 0
