@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Mine : Building
@@ -9,8 +10,15 @@ public class Mine : Building
     // Start is called before the first frame update
     void Start()
     {
-        level = 1;
+        if(level == 1)
+        {
 
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 3, this.transform.position.z);
+
+            // Mevcut GameObject'in rotasyonunu güncelle
+            this.transform.rotation = Quaternion.Euler(-90, 0, 0);
+
+        }
         //InputManager.Instance.input.Player.ActivateBuilding.performed += UpgradeBuilding;
 
     }
@@ -42,21 +50,35 @@ public class Mine : Building
 
     public override void UpgradeBuilding()
     {
-        if (level < 3 && PlayerProperties.Instance.getOre() > cost)
+        if (PlayerProperties.Instance.getOre() < cost)
+        {
+            Debug.Log("Not Enough Ore");
+            return;
+        }
+
+        if (level <3)
         {
             PlayerProperties.Instance.ChangeOreAmount(-cost);
 
-            level++;
 
             health += 50;
 
             maxHealth += 50;
 
-            Debug.Log("Maden seviyesi yükseltildi! Yeni seviye: " + level);
+            level++;
+
+            GameObject temp = Instantiate(BuildingsPrefab.Instance.mineLevels[level-1],this.transform.position, this.transform.rotation);
+
+
+            temp.GetComponent<Building>().level = level;
+
+
+            Destroy(this.gameObject);
+
         }
         else
         {
-            Debug.Log("Bina zaten maksimum seviyede.");
+            Debug.Log("Bina zaten maksimum seviyede. : " + level);
         }
     }
 

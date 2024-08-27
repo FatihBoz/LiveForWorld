@@ -99,6 +99,19 @@ MonoBehaviour:
   cost: 50
   level: 1
   isPressed: 0
+--- !u!65 &6112633799953643708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8552866166764776625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0432, y: 0.07784778, z: 0.08834778}
+  m_Center: {x: -0.001600001, y: 0.01107612, z: -0.004326121}
 --- !u!4 &9077623911537505803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 060c698e27c717a4c879d1d2061203d3, type: 3}

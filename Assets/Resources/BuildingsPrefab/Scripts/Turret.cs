@@ -39,7 +39,13 @@ public class Turret : Building
     }
     public override void UpgradeBuilding()
     {
-        if (level < 3 && PlayerProperties.Instance.getOre() > cost)
+        if(PlayerProperties.Instance.getOre() < cost)
+        {
+            Debug.Log("Not Enough Ore");
+            return;
+        }
+
+        if (level < 3)
         {
             PlayerProperties.Instance.ChangeOreAmount(-cost);
 
@@ -53,8 +59,11 @@ public class Turret : Building
 
             Debug.Log("Maden seviyesi y�kseltildi! Yeni seviye: " + level);
 
-            Instantiate(BuildingsPrefab.Instance.mineLevels[level]);
-            Destroy(this);
+            GameObject temp = Instantiate(BuildingsPrefab.Instance.turretLevels[level-1], this.transform.position, this.transform.rotation);
+            temp.GetComponent<Building>().level = level;
+
+
+            Destroy(this.gameObject);
         }
         else
         {
