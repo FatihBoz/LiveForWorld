@@ -16,8 +16,16 @@ public class ConstructionSite : MonoBehaviour
 
     private void Start()
     {
-        InputManager.Instance.input.Player.ActivateBuilding.performed += ActivateBuilding;
+        //InputManager.Instance.input.Player.ActivateBuilding.performed += ActivateBuilding;
         //BuildUI.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ActivateBuilding();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -42,7 +50,8 @@ public class ConstructionSite : MonoBehaviour
         }
     }
 
-    private void ActivateBuilding(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    //UnityEngine.InputSystem.InputAction.CallbackContext obj
+    private void ActivateBuilding()
     {
         Debug.Log("Activatiing buikding");
         if(PlayerProperties.Instance.getOre() > buildingPrefab.GetComponent<Building>().cost && !isActive && isPressed){

@@ -10,6 +10,8 @@ public class Turret : Building
 
     public float detectionRadius = 10f;
 
+    public GameObject TurretLvl2;
+
     public override void UpgradeBuilding()
     {
         if (level < 3 && PlayerProperties.Instance.getOre() > cost)
@@ -25,6 +27,9 @@ public class Turret : Building
             damage += 50;
 
             Debug.Log("Maden seviyesi yükseltildi! Yeni seviye: " + level);
+
+            Instantiate(TurretLvl2);
+            Destroy(this);
         }
         else
         {
@@ -34,16 +39,23 @@ public class Turret : Building
 
     private void OnCollisionEnter(Collision collision)
     {
+        /*
         if(collision.gameObject.CompareTag("Bomber")) {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         
         }
+        */
     }
 
     void Update()
     {
         FindNearestEnemy(); // En yakýn düþmaný bul
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            UpgradeBuilding();
+        }
 
     }
 

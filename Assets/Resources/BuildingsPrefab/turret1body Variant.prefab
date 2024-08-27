@@ -107,6 +107,7 @@ MonoBehaviour:
   damage: 0
   TurretBulletPrefab: {fileID: 8782668851439358717, guid: 6bb65a29de0b86740a47974816fbbbb0, type: 3}
   detectionRadius: 10
+  TurretLvl2: {fileID: 7658640159180443157, guid: a523fbccd2ab16142be63d63a327d668, type: 3}
 --- !u!1001 &8515608113660730483
 PrefabInstance:
   m_ObjectHideFlags: 0
