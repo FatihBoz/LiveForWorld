@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerProperties : MonoBehaviour
 {
@@ -14,9 +15,16 @@ public class PlayerProperties : MonoBehaviour
     public static PlayerProperties Instance;
 
     public TextMeshProUGUI OreText;
+    private AudioSource audioSource;
+    public AudioClip onHitSoundFx;
+    public Image damageImageUI;
+    public Material playerMat;
+    private bool redded;
 
     private void Start()
     {
+        redded=false;
+        audioSource=GetComponent<AudioSource>();
         UpdateText();
     }
 
@@ -44,13 +52,21 @@ public class PlayerProperties : MonoBehaviour
         OreText.text = ore.ToString();
 
     }
+    public void Update()
+    {
+            playerMat.color=Color.Lerp(playerMat.color,Color.white,Time.deltaTime*5);
 
+    }
     public float getOre()
     {
         return ore;
     }
     public float DecreasePlayerHealth(float amount)
     {
+        ScreenShake.Instance.TriggerShake();
+        playerMat.color=Color.red;
+        audioSource.PlayOneShot(onHitSoundFx);
+        damageImageUI.gameObject.SetActive(true);
         playerHealth-=amount;
         if(playerHealth<=0)
         {

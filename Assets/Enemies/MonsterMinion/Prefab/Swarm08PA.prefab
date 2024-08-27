@@ -113,7 +113,7 @@ MonoBehaviour:
   bloodEffect: {fileID: 5351300510799967930, guid: c8fb92ad672125447b9afb795388c8a1, type: 3}
   getHitSoundFx: {fileID: 0}
   attackPoint: {fileID: 2675099429982037794}
-  attackRangeForSphere: 0.64
+  attackRangeForSphere: 1.12
 --- !u!195 &3301673259851135370
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3824277037057047037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.38, z: 0.928}
+  m_LocalPosition: {x: 0, y: 0.38, z: 1.098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
