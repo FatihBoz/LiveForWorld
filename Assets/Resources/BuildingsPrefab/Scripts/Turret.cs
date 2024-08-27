@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Turret : Building
@@ -79,6 +80,13 @@ public class Turret : Building
         }
         else
         {
+            Vector3 distance = currentTarget.transform.position - transform.position;
+            distance.y=0;
+            if (distance.magnitude>=detectionRadius)
+            {
+                currentTarget=null;
+            }
+
             TurretHeadAnimator.SetBool("FoundEnemy", true);
 
             RotateHead();
@@ -165,13 +173,12 @@ public class Turret : Building
         lookRotationEu.x = 0;
         lookRotationEu.y += 180;
         GameObject bullet = Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.Euler(lookRotationEu));
-
+            bullet.GetComponent<Projectile>().SetDamage(bulletDamage);
 
         if (FirePoint2 != null)
         {
-            Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.Euler(lookRotationEu));
-            TurretBulletPrefab.GetComponent<Projectile>().SetDamage(bulletDamage);
-
+            GameObject bullet2=Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.Euler(lookRotationEu));
+            bullet2.GetComponent<Projectile>().SetDamage(bulletDamage);
         }
     }
 
