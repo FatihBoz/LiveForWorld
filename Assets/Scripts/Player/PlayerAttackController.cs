@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerAttackController : MonoBehaviour
 {
-
+    public float AttackSpeed = 4f; 
     public float BulletDamage;
     public float BulletSpeed = 5f;
     public GameObject BulletPrefab;
@@ -14,24 +13,49 @@ public class PlayerAttackController : MonoBehaviour
 
     private Animator animator;
 
-    private LayerMask layerMask;
     private SoundEffect sf;
-    private int score=0;
+    private bool isShooting;
+
     void Start()
     {
-        layerMask= LayerMask.GetMask("Enemy");
         animator = GetComponent<Animator>();
-        sf=GetComponent<SoundEffect>();
-        InputManager.Instance.input.Player.Shoot.performed += Shoot;
+        sf = GetComponent<SoundEffect>();
+
+        // Input Manager'dan tetikleme
+        InputManager.Instance.input.Player.Shoot.performed += StartShooting;
+        InputManager.Instance.input.Player.Shoot.canceled += EndShooting;
     }
-      private void Shoot(InputAction.CallbackContext context)
+
+    private void EndShooting(InputAction.CallbackContext context)
     {
-        animator.SetTrigger("Shoot");
-        sf.PlaySoundEffect(ShootSound);
-        ScreenShake.Instance.TriggerShake();
-        GameObject bullet = Instantiate(BulletPrefab, ShootPoint.position, transform.rotation);
-        bullet.GetComponent<Projectile>().SetDamage(BulletDamage);
+        isShooting = false;
+        print("end");
     }
 
+    private void StartShooting(InputAction.CallbackContext context)
+    {
+        isShooting = true;
+        StartCoroutine(StartShootingRoutine());
+    }
 
+    private IEnumerator StartShootingRoutine()
+    {
+        while (isShooting)
+        {
+            animator.SetTrigger("Shoot");
+
+            sf.PlaySoundEffect(ShootSound);
+
+            ScreenShake.Instance.TriggerShake();
+
+            GameObject bullet = Instantiate(BulletPrefab, ShootPoint.position, transform.rotation);
+            bullet.GetComponent<Projectile>().SetDamage(BulletDamage);
+
+            yield return new WaitForSeconds(1/AttackSpeed);
+        }
+    }
 }
+    
+
+
+

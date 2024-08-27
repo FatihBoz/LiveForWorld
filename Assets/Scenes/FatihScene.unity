@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 600193629, guid: 910177ec26b76c14996c2d53627a6def, type: 3}
-      propertyPath: m_Volume
-      value: 0.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 622706983, guid: 910177ec26b76c14996c2d53627a6def, type: 3}
-      propertyPath: WalkSf
-      value: 
-      objectReference: {fileID: 8300000, guid: b0e932f690174b346a02febe9b65eaea, type: 3}
     - target: {fileID: 7072444061591351794, guid: 910177ec26b76c14996c2d53627a6def, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -331,7 +323,7 @@ GameObject:
   - component: {fileID: 458328797}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

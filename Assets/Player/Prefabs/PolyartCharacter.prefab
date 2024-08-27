@@ -1971,6 +1971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46abce99d7ef8bd44a14a91b1d9daf21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackSpeed: 7
   BulletDamage: 10
   BulletSpeed: 5
   BulletPrefab: {fileID: 713030411001726764, guid: 2246bec51bf203f4eb4b41ecee204501, type: 3}
@@ -1988,7 +1989,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.77
   m_Pitch: 1
   Loop: 0
   Mute: 0

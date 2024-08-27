@@ -22,7 +22,6 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("girdi");
         if (collision.gameObject.CompareTag("Enemy"))
         {
             if(collision.gameObject.TryGetComponent<Enemy>(out var enemy))
