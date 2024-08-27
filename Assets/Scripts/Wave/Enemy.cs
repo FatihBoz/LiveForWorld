@@ -1,3 +1,4 @@
+using Pathfinding;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,11 +23,14 @@ public class Enemy : MonoBehaviour
     private float currentHp;
 
     private bool isAlive;
+    protected AstarAI astarAI;
 
-
+    private CharacterController chController;
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
+        astarAI= GetComponent<AstarAI>();
+        chController= GetComponent<CharacterController>();
+    //    agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         audioSource= GetComponent<AudioSource>();
         currentHp = maxHp;
@@ -38,7 +42,8 @@ public class Enemy : MonoBehaviour
     {
         if (!isAlive)
         {
-            agent.isStopped=true;
+            astarAI.SetRunning(false);
+          //  agent.isStopped=true;
             return;
         }
 
@@ -52,7 +57,8 @@ public class Enemy : MonoBehaviour
             lastPathUpdateTime = Time.time;
             if(target != null )
             {
-                agent.SetDestination(target.position);
+                astarAI.targetPosition=target;
+              //  agent.SetDestination(target.position);
             }
         }
 
@@ -82,7 +88,9 @@ public class Enemy : MonoBehaviour
             if (collider.CompareTag("Building") || (target == null && collider.CompareTag("Player")))
             {
                 target = collider.transform;
-                agent.SetDestination(target.position);
+                astarAI.targetPosition=target;
+
+               // agent.SetDestination(target.position);
             }
         }
     }
@@ -93,11 +101,15 @@ public class Enemy : MonoBehaviour
 
         if (distanceToTarget <= attackRange)
         {
-            agent.isStopped = true;
+            astarAI.SetRunning(false);
+
+//            agent.isStopped = true;
         }
         else
         {
-            agent.isStopped = false;
+            astarAI.SetRunning(true);
+
+           // agent.isStopped = false;
         }
 
 
@@ -121,7 +133,7 @@ public class Enemy : MonoBehaviour
 
     private void Animate()
     {
-        animator.SetFloat("Speed",agent.speed);
+        animator.SetFloat("Speed",chController.velocity.magnitude);
     }
 
     public void SetTarget(Transform target)
@@ -139,7 +151,8 @@ public class Enemy : MonoBehaviour
             isAlive=false;
             WaveSpawn.Instance.DecreaseWaveObjCount();
             //Die Animation
-            agent.isStopped=true;
+            astarAI.SetRunning(false);
+          //  agent.isStopped=true;
             Destroy(GetComponent<Collider>());
             animator.SetTrigger("Die");
         }
