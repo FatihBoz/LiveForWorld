@@ -187,14 +187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 206199117, guid: c6cfc32748fb5004aa11a1be074b5c58, type: 3}
-      propertyPath: m_Radius
-      value: 1.4050474
-      objectReference: {fileID: 0}
-    - target: {fileID: 206199117, guid: c6cfc32748fb5004aa11a1be074b5c58, type: 3}
-      propertyPath: m_Center.z
-      value: 0.2728777
-      objectReference: {fileID: 0}
     - target: {fileID: 1077356408, guid: c6cfc32748fb5004aa11a1be074b5c58, type: 3}
       propertyPath: m_Name
       value: Polyart_Golem
@@ -431,25 +423,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dadecae318be19749ac4fbd62bd9a632, type: 3}
---- !u!1 &412632419 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1077356408, guid: c6cfc32748fb5004aa11a1be074b5c58, type: 3}
-  m_PrefabInstance: {fileID: 187229382}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &412632426
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412632419}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &458328796
 GameObject:
   m_ObjectHideFlags: 0

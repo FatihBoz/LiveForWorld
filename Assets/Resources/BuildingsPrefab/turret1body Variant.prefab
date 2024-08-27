@@ -162,7 +162,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   TurretLvl2: {fileID: 7658640159180443157, guid: a523fbccd2ab16142be63d63a327d668, type: 3}
   TurretHead: {fileID: 207480846078991766}
   TurretHeadAnimator: {fileID: 4791777756944917295}
-  fireRate: 10
+  fireRate: 4
   turretShootFx: {fileID: 8300000, guid: b3b4a6f221bce0948a22850e8dce6ce0, type: 3}
 --- !u!1001 &8515608113660730483
 PrefabInstance:
