@@ -8,9 +8,21 @@ public class Turret : Building
 
     public GameObject TurretBulletPrefab;
 
+    public Transform FirePoint;
+
+    public Transform FirePoint2;
+
     public float detectionRadius = 10f;
 
     public GameObject TurretLvl2;
+
+    GameObject currentTarget;
+
+    public GameObject TurretHead;
+
+    private float fireCountdown = 0f; 
+    public float fireRate = 1f; 
+
 
     public override void UpgradeBuilding()
     {
@@ -50,7 +62,23 @@ public class Turret : Building
 
     void Update()
     {
-        FindNearestEnemy(); // En yakýn düþmaný bul
+        if(currentTarget == null)
+        {
+            FindNearestEnemy();
+        }
+        else
+        {
+            RotateHead();
+
+            // Ateþ etme süresi dolduysa, ateþ et
+            if (fireCountdown <= 0f)
+            {
+                Fire();
+                fireCountdown = 1f / fireRate;
+            }
+
+            fireCountdown -= Time.deltaTime;
+        }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -74,7 +102,7 @@ public class Turret : Building
                 nearestEnemy = enemy;
             }
         }
-        if(nearestEnemy != null) { return nearestEnemy; }
+        if(nearestEnemy != null) { Debug.Log("Found Enemy"); return nearestEnemy; }
 
         return null;
     }
@@ -87,15 +115,44 @@ public class Turret : Building
     }
 
 
-    void TurnPosition(Vector3 target)
+    void RotateHead()
     {
-
+        Vector3 direction = currentTarget.transform.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(TurretHead.transform.rotation, lookRotation, Time.deltaTime * 10f).eulerAngles;
+        TurretHead.transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-   void StartAttack(GameObject attack)
+   void Fire()
     {
-        TurnPosition(attack.transform.position);
+        Debug.Log("Firing... ");
+        Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.identity);
 
-        Instantiate(TurretBulletPrefab, transform.position, Quaternion.identity);
+        if(FirePoint2 != null)
+        {
+            Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.identity);
+
+        }
     }
+
+
+
+    /*
+    public override void AttackAnimationEvent()
+    {
+        StartCoroutine(WaitForAttack());
+        Vector3 direction = target.position - transform.position;
+        direction.y = 0;
+        direction.Normalize();
+        Instantiate(bulletPrefab, ShootPoint.position, Quaternion.LookRotation(direction));
+    }
+
+
+    private IEnumerator WaitForAttack()
+    {
+        agent.isStopped = true;
+        yield return new WaitForSeconds(1);
+        agent.isStopped = false;
+    }
+    */
 }
