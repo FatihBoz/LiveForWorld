@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3775460387369197967}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7707585726464626328}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -69,6 +69,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8700617353114198275, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -8700617353114198275, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -117,6 +121,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1599826595754709761, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 65702495048144492, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -124,6 +136,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
       propertyPath: m_Name
       value: turret1body Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_TagString
+      value: Turret
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
@@ -262,12 +282,12 @@ MonoBehaviour:
   maxHealth: 100
   cost: 50
   level: 1
+  isPressed: 0
   damage: 0
   TurretBulletPrefab: {fileID: 8782668851439358717, guid: 6bb65a29de0b86740a47974816fbbbb0, type: 3}
   FirePoint: {fileID: 7707585726464626328}
   FirePoint2: {fileID: 3775460387369197967}
   detectionRadius: 10
-  TurretLvl2: {fileID: 7658640159180443157, guid: a523fbccd2ab16142be63d63a327d668, type: 3}
   TurretHead: {fileID: 207480846078991766}
   TurretHeadAnimator: {fileID: 4791777756944917295}
   fireRate: 4
@@ -279,6 +299,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6273053844232539474}
     m_Modifications:
+    - target: {fileID: -8700617353114198275, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -8700617353114198275, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -352,12 +376,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 65702495048144492, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 65702495048144492, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
       propertyPath: m_Name
       value: turret1head
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
