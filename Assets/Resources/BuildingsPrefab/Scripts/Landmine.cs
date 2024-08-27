@@ -20,6 +20,7 @@ public class Landmine : Building
         // Tetiklendiðinde düþmanýn var olup olmadýðýný kontrol et
         if (other.CompareTag("Enemy"))
         {
+            Debug.Log("Düþman geldii ");
             Explode();
         }
     }

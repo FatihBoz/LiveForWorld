@@ -12,6 +12,7 @@ public class Turbine : Building
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Düþman türbine yakalandý ");
             // Knockback etkisi uygula
             Rigidbody enemyRb = collision.gameObject.GetComponent<Rigidbody>();
             if (enemyRb != null)
