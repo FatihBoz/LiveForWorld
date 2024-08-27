@@ -47860,7 +47860,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.73333335
-    functionName: DestroyMe
+    functionName: DestroyCh
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: 50ebbbe1234f59c4a94e778061f54926, type: 3}
     floatParameter: 0
