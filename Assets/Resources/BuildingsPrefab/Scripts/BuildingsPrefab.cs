@@ -10,10 +10,6 @@ public class BuildingsPrefab : MonoBehaviour
 
     public GameObject[] mineLevels = new GameObject[2];
 
-    public GameObject Turbine;
-
-    public GameObject LandMine;
-
     private void Awake()
     {
         if (Instance == null)
