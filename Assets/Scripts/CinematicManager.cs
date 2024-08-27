@@ -23,8 +23,9 @@ public class CinematicManager : MonoBehaviour
         VideoPlayer currentPlayer;
 
 
-        while(playerCounter < Panels.Length )
+        while(playerCounter < Panels.Length-1)
         {
+            print(playerCounter);
             text.gameObject.SetActive(false);
             playerCounter++;
             GameObject rawImage = Panels[playerCounter].transform.GetChild(0).gameObject;

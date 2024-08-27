@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -29,4 +30,11 @@ public class MainMenu : MonoBehaviour
     {
         CinematicManager.OnCinematicFinished -= MainMenu_OnCinematicFinished;
     }
+
+    public void ChangeScene(string sceneName)
+    {
+        print("girdi");
+        SceneManager.LoadScene(sceneName);      
+    }
+
 }
