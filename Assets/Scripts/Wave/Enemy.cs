@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float timeBetweenPathUpdates = 0.5f;
     [SerializeField] protected float attackRange = 5f;
     [SerializeField] private float attackDamage = 5f;
+    [SerializeField] private GameObject bloodEffect;
 
 
     protected Transform target;
@@ -126,7 +127,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         currentHp -= damageAmount;
-        print(currentHp);
         if(currentHp <= 0)
         {
 
@@ -142,5 +142,11 @@ public class Enemy : MonoBehaviour
     public void DestroyCh()
     {
         Destroy(gameObject,0.3f);
+    }
+
+
+    public GameObject GetBloodEffect()
+    {
+        return bloodEffect;
     }
 }

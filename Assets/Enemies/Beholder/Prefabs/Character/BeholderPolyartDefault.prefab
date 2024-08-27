@@ -517,6 +517,7 @@ MonoBehaviour:
   timeBetweenPathUpdates: 0.5
   attackRange: 10
   attackDamage: 5
+  bloodEffect: {fileID: 5351300510799967930, guid: c558fbf1eca7e23429b16a58e529ebb6, type: 3}
   bulletPrefab: {fileID: 713030411001726764, guid: 57e8bf4a9d1cbdb4cb1de55a001bd34c, type: 3}
   ShootPoint: {fileID: 987137456}
 --- !u!195 &1005813616

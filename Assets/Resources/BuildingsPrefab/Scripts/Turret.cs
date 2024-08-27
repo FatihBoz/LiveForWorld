@@ -129,12 +129,10 @@ public class Turret : Building
             Debug.LogWarning("No target set for the turret.");
             return;
         }
-
+        print(currentTarget);
         // Hedefin yönünü hesapla
         Vector3 direction = currentTarget.transform.position - TurretHead.transform.position;
-
         // Yalnýzca Y ekseni üzerinde döndürmek için Y düzlemine projekte et
-        direction.x = 270f;
 
         if (direction.sqrMagnitude == 0f)
         {
@@ -144,26 +142,28 @@ public class Turret : Building
 
         // Hedef yönüne bakacak þekilde rotasyonu hesapla
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-
-        Debug.Log("Current Target Direction: " + direction);
+        Vector3 lookRotationEu = lookRotation.eulerAngles;
+        lookRotationEu.x = 270f;
+        lookRotationEu.y += 180;
+        lookRotation.eulerAngles=lookRotationEu;
 
 
         // Yumuþak dönüþ için Lerp kullanarak rotasyonu hesapla
         TurretHead.transform.rotation = Quaternion.Lerp(TurretHead.transform.rotation, lookRotation, Time.deltaTime * 10f);
 
-        Debug.Log("Current Target Location: " + currentTarget.transform.position);
-        Debug.Log("Current Target Direction: " + direction);
-
     }
 
     void Fire()
     {
-        Debug.Log("Firing... ");
-        Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.Euler(0, 0, 90));
+        Vector3 lookRotationEu = TurretHead.transform.rotation.eulerAngles;
+        lookRotationEu.x = 0;
+        lookRotationEu.y += 180;
+        GameObject bullet = Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.Euler(lookRotationEu));
 
-        if(FirePoint2 != null)
+
+        if (FirePoint2 != null)
         {
-            Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.Euler(0, 0, 90));
+            Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.Euler(lookRotationEu));
             TurretBulletPrefab.GetComponent<Projectile>().SetDamage(bulletDamage);
 
         }

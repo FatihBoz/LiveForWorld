@@ -26,7 +26,10 @@ public class Projectile : MonoBehaviour
         {
             if(collision.gameObject.TryGetComponent<Enemy>(out var enemy))
             {
+                ContactPoint contact = collision.contacts[0];
+                Vector3 hitPoint = contact.point;
                 enemy.TakeDamage(damage);
+                Instantiate(enemy.GetBloodEffect(),hitPoint,Quaternion.identity);
             }
         }
         Destroy(this.gameObject);
@@ -36,4 +39,5 @@ public class Projectile : MonoBehaviour
     {
         this.damage = damage;
     }
+
 }
