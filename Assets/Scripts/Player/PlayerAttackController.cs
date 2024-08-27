@@ -38,6 +38,8 @@ public class PlayerAttackController : MonoBehaviour
         StartCoroutine(StartShootingRoutine());
     }
 
+
+
     private IEnumerator StartShootingRoutine()
     {
         while (isShooting)
