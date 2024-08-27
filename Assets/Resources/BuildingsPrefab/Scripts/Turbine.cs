@@ -8,20 +8,21 @@ public class Turbine : Building
     public float knockbackForce = 5f; // Knockback kuvveti
     public int damageAmount = 10; // Verilecek hasar miktarý
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(UnityEngine.Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Düþman türbine yakalandý ");
             // Knockback etkisi uygula
-            Rigidbody enemyRb = collision.gameObject.GetComponent<Rigidbody>();
+            Rigidbody enemyRb = other.gameObject.GetComponent<Rigidbody>();
             if (enemyRb != null)
             {
-                Vector3 knockbackDirection = collision.transform.position - transform.position;
+                Vector3 knockbackDirection = other.transform.position - transform.position;
                 knockbackDirection.y = 0; // Y eksenindeki hareketi sýnýrlandýrarak yere yapýþmayý engeller
                 enemyRb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode.Impulse);
             }
 
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damageAmount);
+            //other.gameObject.GetComponent<Enemy>().TakeDamage(damageAmount);
             // Hasar uygula
         }
     }

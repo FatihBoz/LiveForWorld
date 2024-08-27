@@ -19,6 +19,7 @@ public class PlayerProperties : MonoBehaviour
     public AudioClip onHitSoundFx;
     public Image damageImageUI;
     public Material playerMat;
+    public Slider healthBar;
     private bool redded;
 
     private void Start()
@@ -26,6 +27,9 @@ public class PlayerProperties : MonoBehaviour
         redded=false;
         audioSource=GetComponent<AudioSource>();
         UpdateText();
+        healthBar.maxValue=playerHealth;
+        healthBar.value=playerHealth;
+
     }
 
     private void Awake()
@@ -68,6 +72,7 @@ public class PlayerProperties : MonoBehaviour
         audioSource.PlayOneShot(onHitSoundFx);
         damageImageUI.gameObject.SetActive(true);
         playerHealth-=amount;
+        healthBar.value=playerHealth;
         if(playerHealth<=0)
         {
             Debug.Log(playerHealth);
