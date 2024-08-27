@@ -126,8 +126,10 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         currentHp -= damageAmount;
+        print(currentHp);
         if(currentHp <= 0)
         {
+
             isAlive=false;
             WaveSpawn.Instance.DecreaseWaveObjCount();
             //Die Animation
