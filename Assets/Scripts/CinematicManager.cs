@@ -4,9 +4,11 @@ using System.Collections;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
+using System;
 
 public class CinematicManager : MonoBehaviour
 {
+    public static Action OnCinematicFinished;
     public TextMeshProUGUI text;
     public GameObject[] Panels;
 
@@ -35,9 +37,18 @@ public class CinematicManager : MonoBehaviour
 
             yield return new WaitForSeconds(4.5f);
 
-            kapatici.DOFade(1f, 0.75f);
+            if (!(playerCounter == Panels.Length - 1))
+            {
+                kapatici.DOFade(1f, 0.75f);
+            }
+
             yield return new WaitForSeconds(1f);
             Panels[playerCounter].SetActive(false);
+
+            if(playerCounter == Panels.Length - 1)
+            {
+                OnCinematicFinished?.Invoke();
+            }
     
         }
         
