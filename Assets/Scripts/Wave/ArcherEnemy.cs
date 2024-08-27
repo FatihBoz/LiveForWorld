@@ -15,18 +15,6 @@ public class ArcherEnemy : Enemy
         direction.Normalize();
         Instantiate(bulletPrefab, ShootPoint.position, Quaternion.LookRotation(direction));
     }
-
-    protected override void CalculateDistanceAndAttack()
-    {
-        if (Vector3.Distance(transform.position, target.position) <= attackRange)
-        {
-            agent.isStopped = true;
-        }
-
-        base.CalculateDistanceAndAttack();
-        
-    }
-
     private IEnumerator WaitForAttack()
     {
         agent.isStopped = true;

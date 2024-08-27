@@ -6,41 +6,31 @@ using UnityEngine.InputSystem;
 public class PlayerAttackController : MonoBehaviour
 {
 
-
+    public float BulletDamage;
     public float BulletSpeed = 5f;
     public GameObject BulletPrefab;
     public Transform ShootPoint;
+    public AudioClip ShootSound;
 
     private Animator animator;
 
     private LayerMask layerMask;
-
+    private SoundEffect sf;
     private int score=0;
     void Start()
     {
         layerMask= LayerMask.GetMask("Enemy");
         animator = GetComponent<Animator>();
-
+        sf=GetComponent<SoundEffect>();
         InputManager.Instance.input.Player.Shoot.performed += Shoot;
     }
       private void Shoot(InputAction.CallbackContext context)
     {
         animator.SetTrigger("Shoot");
+        sf.PlaySoundEffect(ShootSound);
         ScreenShake.Instance.TriggerShake();
         GameObject bullet = Instantiate(BulletPrefab, ShootPoint.position, transform.rotation);
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.rotation.x * BulletSpeed,0, bullet.transform.rotation.z * BulletSpeed);
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position,transform.forward,out hit,Mathf.Infinity,layerMask))
-        {
-            ScreenShake.Instance.TriggerShake();
-            Destroy(hit.collider.gameObject);
-            score+=10;
-            Debug.Log(score);
-            WaveSpawn.Instance.DecreaseWaveObjCount();
-        }
-
-
+        bullet.GetComponent<Projectile>().SetDamage(BulletDamage);
     }
 
 

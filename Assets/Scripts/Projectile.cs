@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public float Speed = 10f;
     public float deathTime=1f;
 
+    private float damage;
     private Rigidbody rb;
 
     private void Awake()
@@ -17,5 +18,23 @@ public class Projectile : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = transform.forward * Speed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("girdi");
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if(collision.gameObject.TryGetComponent<Enemy>(out var enemy))
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
+        Destroy(this.gameObject);
+    }
+
+    public void SetDamage(float damage)
+    {
+        this.damage = damage;
     }
 }

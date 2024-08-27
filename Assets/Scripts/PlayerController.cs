@@ -1,5 +1,6 @@
 using Cinemachine;
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,14 +13,20 @@ public class PlayerController : MonoBehaviour
     public float BulletSpeed = 5f;
     public GameObject BulletPrefab;
     public Transform ShootPoint;
+    public AudioClip WalkSf;
 
+
+    private SoundEffect sf;
     private Rigidbody rb;
     private Camera mainCamera;
     private Animator animator;
     private Vector2 moveDirection;
+    private bool isRunning;
+    private bool canPlaySf = true;
 
     private void Awake()
     {
+        sf = GetComponent<SoundEffect>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -70,12 +77,27 @@ public class PlayerController : MonoBehaviour
     {
         if (moveDirection == Vector2.zero)
         {
-            animator.SetBool("isRunning", false);
+            isRunning = false;
+            animator.SetBool("isRunning", isRunning);
         }
         else
         {
-            animator.SetBool("isRunning", true);
+            isRunning = true;
+            animator.SetBool("isRunning", isRunning);
+            if(canPlaySf)
+            {
+                StartCoroutine(WalkSoundEffect());
+            }
         }
+        
+    }
+
+    private IEnumerator WalkSoundEffect()
+    {
+        sf.PlaySoundEffect(WalkSf);
+        canPlaySf = false;
+        yield return new WaitForSeconds(.35f);
+        canPlaySf = true;
     }
 
     private void FixedUpdate()

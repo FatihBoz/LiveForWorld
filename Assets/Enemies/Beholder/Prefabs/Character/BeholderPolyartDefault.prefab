@@ -511,10 +511,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed60dfaf1cbd50e42afa120f811c7e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 20
   attackCooldown: 2
   detectionRange: 20
   timeBetweenPathUpdates: 0.5
-  attackRange: 15
+  attackRange: 10
   attackDamage: 5
   bulletPrefab: {fileID: 713030411001726764, guid: 57e8bf4a9d1cbdb4cb1de55a001bd34c, type: 3}
   ShootPoint: {fileID: 987137456}
@@ -537,7 +538,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2.51
-  m_BaseOffset: 0.32
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &1695502807786733845

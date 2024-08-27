@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private float maxHp;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float detectionRange = 10f;
     [SerializeField] private float timeBetweenPathUpdates = 0.5f;
@@ -15,12 +16,14 @@ public class Enemy : MonoBehaviour
     protected Animator animator;
     protected float lastPathUpdateTime;
     protected float attackTime = 0;
+    private float currentHp;
 
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        currentHp = maxHp;
     }
 
 
@@ -59,6 +62,8 @@ public class Enemy : MonoBehaviour
     private void DetectEnemies()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRange);
+
+
         foreach (Collider collider in hitColliders)
         {
             if (collider.CompareTag("Building") || (target == null && collider.CompareTag("Player")))
@@ -69,9 +74,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void CalculateDistanceAndAttack()
+    private void CalculateDistanceAndAttack()
     {
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+        if (distanceToTarget <= attackRange)
+        {
+            agent.isStopped = true;
+        }
+        else
+        {
+            agent.isStopped = false;
+        }
+
 
         if (distanceToTarget <= attackRange && Time.time >= attackTime + attackCooldown)
         {
@@ -99,6 +114,18 @@ public class Enemy : MonoBehaviour
     public void SetTarget(Transform target)
     {
         this.target = target;
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        currentHp -= damageAmount;
+        if(currentHp <= 0)
+        {
+
+            WaveSpawn.Instance.DecreaseWaveObjCount();
+            //Die Animation
+            Destroy(this.gameObject);
+        }
     }
 
 }
