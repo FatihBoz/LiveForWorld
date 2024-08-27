@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 9
   m_Name: FirePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248118641148323750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0174, y: 0.0305, z: 0.0055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ GameObject:
   m_Layer: 9
   m_Name: FirePoint2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5964134494790432512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0171, y: 0.0309, z: 0.0053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,11 +87,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 427d8cd9d281fc645824222f618e7163, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0099993
+      value: 0.878
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 427d8cd9d281fc645824222f618e7163, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.35919
+      value: 0.058
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 427d8cd9d281fc645824222f618e7163, type: 3}
       propertyPath: m_LocalRotation.w
@@ -194,15 +194,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 027c0f34bbe753348adf63c8bf17e4dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.19398808
+      value: -11.998758
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 027c0f34bbe753348adf63c8bf17e4dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.1399994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 027c0f34bbe753348adf63c8bf17e4dc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.65919
+      value: -113.09586
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 027c0f34bbe753348adf63c8bf17e4dc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 027c0f34bbe753348adf63c8bf17e4dc, type: 3}
       propertyPath: m_Name
-      value: turret2body Variant
+      value: TurretLevel3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 027c0f34bbe753348adf63c8bf17e4dc, type: 3}
       propertyPath: m_Layer
