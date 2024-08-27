@@ -33,29 +33,7 @@ public class Mine : Building
             UpgradeBuilding();
         }
     }
-    /*
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Valla player tespit ettim");
-            isPressed = true;
-            //BuildUI.SetActive(true);
-
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Valla player tespit ettim");
-            isPressed = false;
-            //BuildUI.SetActive(true);
-
-        }
-    }
-    */
+   
     void ProduceResource()
     {
         // Her üretimde oyuncu kaynaklarýný artýr
