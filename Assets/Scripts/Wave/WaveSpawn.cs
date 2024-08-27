@@ -61,10 +61,10 @@ public class WaveSpawn : MonoBehaviour
             if (Time.time>=spawnCooldown+spawnTime)
             {
                 spawnTime=Time.time;
-                Vector3 v3Pos = player.transform.position + pos[Random.Range(0,pos.Length)];
+                Vector3 v3Pos = pos[Random.Range(0,pos.Length)];
                 //v3Pos.y=1f;
                 Enemy spawnedObject = Instantiate(prefabs[Random.Range(0,prefabs.Length)]);
-                spawnedObject.SetTarget(player);
+               // spawnedObject.SetTarget(player);
                 spawnedObject.transform.position= v3Pos;
                 waveObjCount++;
             }
@@ -89,7 +89,7 @@ public class WaveSpawn : MonoBehaviour
                     prefabs[Random.Range(0,prefabs.Length)],
                     rowCount*5,
                     rowCount,
-                    player.transform.position+pos[Random.Range(0,pos.Length)]
+                    pos[Random.Range(0,pos.Length)]
                     );    
                 setWave.Spawn();
                 

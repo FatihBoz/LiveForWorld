@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public LayerMask focusLayerMask;
     [SerializeField] private float maxHp;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float detectionRange = 10f;
@@ -80,18 +81,13 @@ public class Enemy : MonoBehaviour
 
     private void DetectEnemies()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRange);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRange,focusLayerMask);
 
 
         foreach (Collider collider in hitColliders)
         {
-            if (collider.CompareTag("Building") || (target == null && collider.CompareTag("Player")))
-            {
                 target = collider.transform;
-                astarAI.targetPosition=target;
-
                // agent.SetDestination(target.position);
-            }
         }
     }
 

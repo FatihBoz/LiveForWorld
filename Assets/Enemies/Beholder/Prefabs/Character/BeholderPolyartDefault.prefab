@@ -514,9 +514,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed60dfaf1cbd50e42afa120f811c7e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  focusLayerMask:
+    serializedVersion: 2
+    m_Bits: 640
   maxHp: 20
   attackCooldown: 2
-  detectionRange: 20
+  detectionRange: 63.67
   timeBetweenPathUpdates: 0.5
   attackRange: 10
   attackDamage: 5
