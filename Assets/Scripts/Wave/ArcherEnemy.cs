@@ -12,6 +12,6 @@ public class ArcherEnemy : Enemy
         Vector3 direction = target.position - transform.position;
         direction.y = 0;
         direction.Normalize();
-        GameObject bullet = Instantiate(bulletPrefab, ShootPoint.position, transform.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, ShootPoint.position, Quaternion.LookRotation(direction));
     }
 }
