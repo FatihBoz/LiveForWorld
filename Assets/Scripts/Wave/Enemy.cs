@@ -10,20 +10,25 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float attackRange = 5f;
     [SerializeField] private float attackDamage = 5f;
     [SerializeField] private GameObject bloodEffect;
-
+    public AudioClip getHitSoundFx;
 
     protected Transform target;
     protected NavMeshAgent agent;
     protected Animator animator;
+    protected AudioSource audioSource;
+    
     protected float lastPathUpdateTime;
     protected float attackTime = 0;
     private float currentHp;
 
     private bool isAlive;
+
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        audioSource= GetComponent<AudioSource>();
         currentHp = maxHp;
         isAlive=true;
     }
@@ -127,6 +132,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         currentHp -= damageAmount;
+        audioSource.PlayOneShot(getHitSoundFx);
         if(currentHp <= 0)
         {
 
