@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ConstructionSite : MonoBehaviour
 {
-    bool isActive = false;
+    //bool isActive = false;
     bool isPressed = false;
 
 
@@ -22,13 +22,13 @@ public class ConstructionSite : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && isPressed)
         {
             ActivateBuilding();
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -54,10 +54,26 @@ public class ConstructionSite : MonoBehaviour
     private void ActivateBuilding()
     {
         Debug.Log("Activatiing buikding");
-        if(PlayerProperties.Instance.getOre() > buildingPrefab.GetComponent<Building>().cost && !isActive && isPressed){
+        if (buildingPrefab != null)
+        {
+            print("prefab var");
+        }
+        if (PlayerProperties.Instance != null)
+        {
+            print("Instance var");
+        }
+        if (PlayerProperties.Instance.getOre() > buildingPrefab.GetComponent<Building>().cost){
+            if(buildingPrefab == null)
+            {
+                print("prefab yok");
+            }
+            if (PlayerProperties.Instance == null)
+            {
+                print("Instance yok");
+            }
+
             Debug.Log("ise girdi");
             PlayerProperties.Instance.ChangeOreAmount(-buildingPrefab.GetComponent<Building>().cost);
-            isActive = true;
             Destroy(this.gameObject);
             Instantiate(buildingPrefab, transform.position, Quaternion.identity);
         }

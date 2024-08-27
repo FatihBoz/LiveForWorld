@@ -28,12 +28,34 @@ public class Mine : Building
             productionTimer = 0f; // Zamanlayýcýyý sýfýrla
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q) && isPressed)
         {
             UpgradeBuilding();
         }
     }
+    /*
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Valla player tespit ettim");
+            isPressed = true;
+            //BuildUI.SetActive(true);
 
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Valla player tespit ettim");
+            isPressed = false;
+            //BuildUI.SetActive(true);
+
+        }
+    }
+    */
     void ProduceResource()
     {
         // Her üretimde oyuncu kaynaklarýný artýr
