@@ -12,6 +12,7 @@ public abstract class Building : MonoBehaviour
 
     public int level = 1;
 
+    public bool isPressed;
 
     public void ChangeHealth(int health)
     { 
@@ -19,5 +20,27 @@ public abstract class Building : MonoBehaviour
     }
 
     public abstract void UpgradeBuilding();
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Valla player tespit ettim");
+            isPressed = true;
+            //BuildUI.SetActive(true);
+
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Valla player çýktý");
+            isPressed = false;
+            //BuildUI.SetActive(true);
+
+        }
+    }
 
 }

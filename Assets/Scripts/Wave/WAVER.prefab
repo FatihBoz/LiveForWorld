@@ -46,10 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   prefabs:
-  - {fileID: 218771665, guid: dadecae318be19749ac4fbd62bd9a632, type: 3}
+  - {fileID: 1720175703759513596, guid: 6be18c83797e9b14cb2dc9160b155d89, type: 3}
   - {fileID: 1005813615, guid: c73a559184154c75991d095521bdea87, type: 3}
-  - {fileID: 206199116, guid: c6cfc32748fb5004aa11a1be074b5c58, type: 3}
-  - {fileID: 7974302517980751820, guid: 6be18c83797e9b14cb2dc9160b155d89, type: 3}
+  - {fileID: 1652763208487431454, guid: c6cfc32748fb5004aa11a1be074b5c58, type: 3}
+  - {fileID: 4648629394097272553, guid: dadecae318be19749ac4fbd62bd9a632, type: 3}
   spawnCount: 5
-  distance: 100
+  distance: 20
+  pos:
+  - {x: 15, y: 10, z: 15}
+  - {x: -15, y: 10, z: -15}
+  - {x: -15, y: 10, z: 15}
+  - {x: 15, y: 10, z: -15}
   setWaveCooldown: 30

@@ -7,6 +7,9 @@ public class Turret : Building
 {
     public float damage;
 
+    
+
+
     public GameObject TurretBulletPrefab;
 
     public Transform FirePoint;
@@ -15,7 +18,6 @@ public class Turret : Building
 
     public float detectionRadius = 10f;
 
-    public GameObject TurretLvl2;
 
     GameObject currentTarget;
 
@@ -51,7 +53,7 @@ public class Turret : Building
 
             Debug.Log("Maden seviyesi y�kseltildi! Yeni seviye: " + level);
 
-            Instantiate(TurretLvl2);
+            Instantiate(BuildingsPrefab.Instance.mineLevels[level]);
             Destroy(this);
         }
         else
@@ -59,6 +61,30 @@ public class Turret : Building
             Debug.Log("Bina zaten maksimum seviyede.");
         }
     }
+
+    /*
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Valla player tespit ettim");
+            isPressed = true;
+            //BuildUI.SetActive(true);
+
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Valla player tespit ettim");
+            isPressed = false;
+            //BuildUI.SetActive(true);
+
+        }
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -68,9 +94,9 @@ public class Turret : Building
             Destroy(this.gameObject);
         
         }
-        */
+        
     }
-
+*/
     void Update()
     {
         if(currentTarget == null)
@@ -101,7 +127,7 @@ public class Turret : Building
             fireCountdown -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             UpgradeBuilding();
         }

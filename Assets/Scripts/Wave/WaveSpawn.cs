@@ -12,7 +12,8 @@ public class WaveSpawn : MonoBehaviour
     public float distance;
     private float spawnTime=0;
     private float spawnCooldown=5f;
-    private Vector3[] pos;
+    [Header("player position + pos")]
+    public Vector3[] pos;
 
     private float randomCircleSpawnTime;
     private float circleSpawnedTime;
@@ -34,14 +35,6 @@ public class WaveSpawn : MonoBehaviour
     }
     void Start()
     {
-        pos=new Vector3[]
-        {
-            new Vector3(1.5f, 1.5f, 15f),
-            new Vector3( 0, 0f, 10f)
-        ,new Vector3(-0.5f, 1.2f, 10f)
-        ,new Vector3(1.2f, 0f, 10f)
-        };
-
 
         // CircleWave circleWave = new CircleWave(player,prefabs[0],spawnCount,distance);
         // waveObjCount=circleWave.Spawn().Count;
@@ -68,8 +61,8 @@ public class WaveSpawn : MonoBehaviour
             if (Time.time>=spawnCooldown+spawnTime)
             {
                 spawnTime=Time.time;
-                Vector3 v3Pos = Camera.main.ViewportToWorldPoint(pos[Random.Range(0,pos.Length)]);
-                v3Pos.y=1f;
+                Vector3 v3Pos = player.transform.position + pos[Random.Range(0,pos.Length)];
+                //v3Pos.y=1f;
                 Enemy spawnedObject = Instantiate(prefabs[Random.Range(0,prefabs.Length)]);
                 spawnedObject.SetTarget(player);
                 spawnedObject.transform.position= v3Pos;
@@ -82,7 +75,7 @@ public class WaveSpawn : MonoBehaviour
                 randomCircleSpawnTime=Random.Range(20f,30f);
                 int inGameSpawnCount = Random.Range(spawnCount,30);
                 CircleWave circleWave1 = new CircleWave(player,prefabs[0],inGameSpawnCount,distance);
-                CircleWave circleWave2 = new CircleWave(player,prefabs[1],inGameSpawnCount,distance, (Mathf.PI/inGameSpawnCount));
+                CircleWave circleWave2 = new CircleWave(player,prefabs[3],inGameSpawnCount,distance, (Mathf.PI/inGameSpawnCount));
                 circleWave1.Spawn();
                 circleWave2.Spawn();
             }
@@ -96,7 +89,7 @@ public class WaveSpawn : MonoBehaviour
                     prefabs[Random.Range(0,prefabs.Length)],
                     rowCount*5,
                     rowCount,
-                    pos[Random.Range(0,pos.Length)]+new Vector3(10,0,10)
+                    player.transform.position+pos[Random.Range(0,pos.Length)]
                     );    
                 setWave.Spawn();
                 

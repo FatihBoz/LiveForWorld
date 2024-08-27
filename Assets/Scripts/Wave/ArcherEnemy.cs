@@ -17,8 +17,12 @@ public class ArcherEnemy : Enemy
     }
     private IEnumerator WaitForAttack()
     {
-        agent.isStopped = true;
+            astarAI.SetRunning(false);
+
+     //   agent.isStopped = true;
         yield return new WaitForSeconds(1);
-        agent.isStopped = false;
+      //  agent.isStopped = false;
+            astarAI.SetRunning(true);
+
     }
 }
