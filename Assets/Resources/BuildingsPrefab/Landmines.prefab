@@ -103,3 +103,7 @@ MonoBehaviour:
   cost: 10
   level: 1
   isPressed: 0
+  explosionRadius: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
