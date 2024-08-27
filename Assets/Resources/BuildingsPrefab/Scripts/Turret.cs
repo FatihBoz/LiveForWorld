@@ -74,11 +74,8 @@ public class Turret : Building
     {
         if(currentTarget == null)
         {
-            TurretHeadAnimator.SetBool("FoundEnemy", false);
-
             FindNearestEnemy();
-
-           
+            TurretHeadAnimator.SetBool("FoundEnemy", false); 
         }
         else
         {
