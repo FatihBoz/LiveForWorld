@@ -84,20 +84,20 @@ public class WaveSpawn : MonoBehaviour
                 CircleWave circleWave2 = new CircleWave(player,prefabs[1],inGameSpawnCount,distance, (Mathf.PI/inGameSpawnCount));
                 circleWave1.Spawn();
                 circleWave2.Spawn();
-
             }
 
-             if (Time.time>=setWaveTime+setWaveCooldown)
+            if (Time.time>=setWaveTime+setWaveCooldown)
             {
-                    setWaveTime=Time.time;
-                    int rowCount=Random.Range(4,6);
-            SetWave setWave = new SetWave(
-                player,
-                prefabs[Random.Range(0,prefabs.Length)],
-            rowCount*5,
-            rowCount,
-            pos[Random.Range(0,pos.Length)]);
-            setWave.Spawn();
+                setWaveTime=Time.time;
+                int rowCount=Random.Range(4,6);
+                SetWave setWave = new SetWave(
+                    player,
+                    prefabs[Random.Range(0,prefabs.Length)],
+                    rowCount*5,
+                    rowCount,
+                    pos[Random.Range(0,pos.Length)]);    
+                setWave.Spawn();
+                
             }
             
     }
