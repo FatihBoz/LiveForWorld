@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class CinematicManager : MonoBehaviour
 {
-    private Image currentImage;
     public TextMeshProUGUI text;
     public GameObject[] Panels;
 
@@ -39,7 +38,7 @@ public class CinematicManager : MonoBehaviour
             kapatici.DOFade(1f, 0.75f);
             yield return new WaitForSeconds(1f);
             Panels[playerCounter].SetActive(false);
-            
+    
         }
         
 
