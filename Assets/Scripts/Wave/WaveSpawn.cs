@@ -16,6 +16,9 @@ public class WaveSpawn : MonoBehaviour
 
     private float randomCircleSpawnTime;
     private float circleSpawnedTime;
+
+    private float setWaveCooldown=15f;
+    private float setWaveTime;
     private void Awake() 
     { 
         if (Instance != null && Instance != this) 
@@ -39,8 +42,12 @@ public class WaveSpawn : MonoBehaviour
         };
 
 
-         CircleWave circleWave = new CircleWave(player,prefabs[0],spawnCount,distance);
-         waveObjCount=circleWave.Spawn().Count;
+        // CircleWave circleWave = new CircleWave(player,prefabs[0],spawnCount,distance);
+        // waveObjCount=circleWave.Spawn().Count;
+
+
+        setWaveTime=Time.time;
+        
         circleSpawnedTime=Time.time;
          randomCircleSpawnTime=Random.Range(10f,30f);
 /*         for (int i = 0; i < spawnCount; i++)
@@ -77,6 +84,19 @@ public class WaveSpawn : MonoBehaviour
                 circleWave1.Spawn();
                 circleWave2.Spawn();
 
+            }
+
+             if (Time.time>=setWaveTime+setWaveCooldown)
+            {
+                    setWaveTime=Time.time;
+                    int rowCount=Random.Range(4,6);
+            SetWave setWave = new SetWave(
+                player,
+                prefabs[Random.Range(0,prefabs.Length)],
+            rowCount*5,
+            rowCount,
+            pos[Random.Range(0,pos.Length)]);
+            setWave.Spawn();
             }
             
     }
