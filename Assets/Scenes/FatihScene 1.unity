@@ -2129,6 +2129,81 @@ MonoBehaviour:
   shakeDuration: 0.5
   shakeAmplitude: 2
   shakeFrequency: 2
+--- !u!1 &1277123093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1361816636247765086, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+  m_PrefabInstance: {fileID: 1308851251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1277123098
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277123093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08096934, y: 0.09579843, z: 0.13999997}
+  m_Center: {x: 0.019514961, y: -0.012101128, z: -0.030000534}
+--- !u!1001 &1308851251
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1361816636247765086, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_Name
+      value: Gemi(kirik) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7304801
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.37293977
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5678541
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.06968872
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850405155740297956, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
 --- !u!1 &1562413483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,5 +2578,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 232729082}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: pos.Array.data[0].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: pos.Array.data[1].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: pos.Array.data[2].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: pos.Array.data[3].y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
