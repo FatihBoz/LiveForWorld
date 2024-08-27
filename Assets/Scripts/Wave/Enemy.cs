@@ -139,6 +139,7 @@ public class Enemy : MonoBehaviour
     public void SetTarget(Transform target)
     {
         this.target = target;
+        astarAI.targetPosition=target;
     }
 
     public void TakeDamage(float damageAmount)
