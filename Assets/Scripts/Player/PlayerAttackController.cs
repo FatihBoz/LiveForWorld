@@ -34,8 +34,7 @@ public class PlayerAttackController : MonoBehaviour
         if (Physics.Raycast(transform.position,transform.forward,out hit,Mathf.Infinity,layerMask))
         {
             ScreenShake.Instance.TriggerShake();
-            hit.collider.GetComponent<Enemy>().Die();
-           // Destroy(hit.collider.gameObject);
+            Destroy(hit.collider.gameObject);
             score+=10;
             Debug.Log(score);
             WaveSpawn.Instance.DecreaseWaveObjCount();

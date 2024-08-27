@@ -101,16 +101,4 @@ public class Enemy : MonoBehaviour
         this.target = target;
     }
 
-    public void Die()
-    {
-        Destroy(GetComponent<Collider>());
-        animator.SetTrigger("Die");
-    }
-
-    public void DestroyMe()
-    {
-        Destroy(gameObject,0.3f);
-    }
-
-
 }
