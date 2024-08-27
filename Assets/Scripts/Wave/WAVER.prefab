@@ -52,3 +52,4 @@ MonoBehaviour:
   - {fileID: 7974302517980751820, guid: 6be18c83797e9b14cb2dc9160b155d89, type: 3}
   spawnCount: 5
   distance: 15
+  setWaveCooldown: 30

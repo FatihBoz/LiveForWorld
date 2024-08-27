@@ -162,7 +162,8 @@ public class Turret : Building
 
 
         // Yumu�ak d�n�� i�in Lerp kullanarak rotasyonu hesapla
-        TurretHead.transform.rotation = Quaternion.Lerp(TurretHead.transform.rotation, lookRotation, Time.deltaTime * 10f);
+        //TurretHead.transform.rotation = Quaternion.Lerp(TurretHead.transform.rotation, lookRotation, Time.deltaTime * 10f);
+        TurretHead.transform.rotation = lookRotation;
 
     }
 
@@ -172,12 +173,15 @@ public class Turret : Building
         Vector3 lookRotationEu = TurretHead.transform.rotation.eulerAngles;
         lookRotationEu.x = 0;
         lookRotationEu.y += 180;
-        GameObject bullet = Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.Euler(lookRotationEu));
+        Vector3 direction = currentTarget.transform.position-FirePoint.transform.position;
+        GameObject bullet = Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.LookRotation(direction));
             bullet.GetComponent<Projectile>().SetDamage(bulletDamage);
 
         if (FirePoint2 != null)
         {
-            GameObject bullet2=Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.Euler(lookRotationEu));
+        direction = currentTarget.transform.position-FirePoint2.transform.position;
+
+            GameObject bullet2=Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.LookRotation(direction));
             bullet2.GetComponent<Projectile>().SetDamage(bulletDamage);
         }
     }
