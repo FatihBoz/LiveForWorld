@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
             DetectEnemies();
 
             lastPathUpdateTime = Time.time;
-            if(target != null )
+            if(target != null  && agent.isOnNavMesh)
             {
                 agent.SetDestination(target.position);
             }
@@ -82,7 +82,11 @@ public class Enemy : MonoBehaviour
             if (collider.CompareTag("Building") || (target == null && collider.CompareTag("Player")))
             {
                 target = collider.transform;
-                agent.SetDestination(target.position);
+                if (agent.isOnNavMesh)
+                {
+                    agent.SetDestination(target.position);
+                }
+
             }
         }
     }
@@ -90,6 +94,7 @@ public class Enemy : MonoBehaviour
     private void CalculateDistanceAndAttack()
     {
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        if(!agent.isOnNavMesh) { return; }
 
         if (distanceToTarget <= attackRange)
         {
