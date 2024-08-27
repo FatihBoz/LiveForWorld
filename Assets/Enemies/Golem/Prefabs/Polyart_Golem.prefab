@@ -427,16 +427,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76352756dcfa2a44dba30002f6f4a8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  focusLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   maxHp: 200
   attackCooldown: 2
-  detectionRange: 20
+  detectionRange: 195.4
   timeBetweenPathUpdates: 0.5
-  attackRange: 4
+  attackRange: 6
   attackDamage: 20
   bloodEffect: {fileID: 5351300510799967930, guid: 6a3a8d6bf34ef574c8025cae25ea4b54, type: 3}
   getHitSoundFx: {fileID: 8300000, guid: 4e545e44fcec3e54b945f96f53e8abe9, type: 3}
   attackPoint: {fileID: 1330733958368911476}
-  attackRangeForSphere: 1.98
+  attackRangeForSphere: 2
 --- !u!195 &206199119
 NavMeshAgent:
   m_ObjectHideFlags: 0

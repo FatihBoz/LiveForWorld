@@ -8,7 +8,7 @@ TagManager:
   - Main
   - Turret
   - Enemy
-  - Building
+  - Turbine
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - Enemy
   - Player
   - Ground
-  - 
+  - Building
   - 
   - 
   - 

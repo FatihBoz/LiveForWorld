@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mine Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 060c698e27c717a4c879d1d2061203d3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 060c698e27c717a4c879d1d2061203d3, type: 3}
+      propertyPath: m_TagString
+      value: Mine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 060c698e27c717a4c879d1d2061203d3, type: 3}
 --- !u!1 &8552866166764776625 stripped
@@ -90,6 +98,7 @@ MonoBehaviour:
   maxHealth: 100
   cost: 50
   level: 1
+  isPressed: 0
 --- !u!4 &9077623911537505803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 060c698e27c717a4c879d1d2061203d3, type: 3}
@@ -161,6 +170,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5f40bcbda47508549987213ab3cd386a, type: 3}
       propertyPath: m_Name
       value: MineWagon
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f40bcbda47508549987213ab3cd386a, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f40bcbda47508549987213ab3cd386a, type: 3}

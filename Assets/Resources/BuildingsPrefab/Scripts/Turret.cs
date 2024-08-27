@@ -62,41 +62,6 @@ public class Turret : Building
         }
     }
 
-    /*
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Valla player tespit ettim");
-            isPressed = true;
-            //BuildUI.SetActive(true);
-
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Valla player tespit ettim");
-            isPressed = false;
-            //BuildUI.SetActive(true);
-
-        }
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        /*
-        if(collision.gameObject.CompareTag("Bomber")) {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        
-        }
-        
-    }
-*/
     void Update()
     {
         if(currentTarget == null)

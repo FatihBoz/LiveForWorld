@@ -19,7 +19,7 @@ public class SetWave : Wave
         for (int i = 0; i < Count; i++)
         {
             Enemy spawnedWaveObj=Object.Instantiate(Prefab);
-            spawnedWaveObj.SetTarget(Target);
+           // spawnedWaveObj.SetTarget(Target);
             float x = 1+i%rowCount;
             float z = 1+i/rowCount;
             spawnedWaveObj.transform.position=new Vector3(x,1f,z)+baseCoordinate;
