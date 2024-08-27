@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Building : MonoBehaviour
@@ -27,10 +28,12 @@ public abstract class Building : MonoBehaviour
         {
             Debug.Log("Valla player tespit ettim");
             isPressed = true;
-            //BuildUI.SetActive(true);
+            BuildingInfo.Instance.UpdateText(this.gameObject);
+            BuildingInfo.Instance.gameObject.SetActive(true);
 
         }
     }
+
 
     private void OnCollisionExit(Collision collision)
     {
@@ -38,7 +41,8 @@ public abstract class Building : MonoBehaviour
         {
             Debug.Log("Valla player çýktý");
             isPressed = false;
-            //BuildUI.SetActive(true);
+            BuildingInfo.Instance.gameObject.SetActive(false);
+
 
         }
     }

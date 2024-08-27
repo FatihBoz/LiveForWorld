@@ -7,9 +7,6 @@ public class Turret : Building
 {
     public float damage;
 
-    
-
-
     public GameObject TurretBulletPrefab;
 
     public Transform FirePoint;
@@ -17,7 +14,6 @@ public class Turret : Building
     public Transform FirePoint2;
 
     public float detectionRadius = 10f;
-
 
     GameObject currentTarget;
 
