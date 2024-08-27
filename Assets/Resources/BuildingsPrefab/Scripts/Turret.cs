@@ -20,9 +20,11 @@ public class Turret : Building
 
     public GameObject TurretHead;
 
-    private float fireCountdown = 0f; 
-    public float fireRate = 1f; 
+    public Animator TurretHeadAnimator;
 
+    private float fireCountdown = 0f; 
+    public float fireRate = 1f;
+    float bulletDamage = 10;
 
     public override void UpgradeBuilding()
     {
@@ -64,10 +66,16 @@ public class Turret : Building
     {
         if(currentTarget == null)
         {
+            TurretHeadAnimator.SetBool("FoundEnemy", false);
+
             FindNearestEnemy();
+
+           
         }
         else
         {
+            TurretHeadAnimator.SetBool("FoundEnemy", true);
+
             RotateHead();
 
             // Ateþ etme süresi dolduysa, ateþ et
@@ -87,7 +95,7 @@ public class Turret : Building
 
     }
 
-    public GameObject FindNearestEnemy()
+    public void FindNearestEnemy()
     {
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
@@ -102,9 +110,8 @@ public class Turret : Building
                 nearestEnemy = enemy;
             }
         }
-        if(nearestEnemy != null) { Debug.Log("Found Enemy"); return nearestEnemy; }
+        if(nearestEnemy != null) { Debug.Log("Found Enemy"); currentTarget = nearestEnemy; }
 
-        return null;
     }
 
     void OnDrawGizmosSelected()
@@ -117,20 +124,47 @@ public class Turret : Building
 
     void RotateHead()
     {
-        Vector3 direction = currentTarget.transform.position - transform.position;
+        if (currentTarget == null)
+        {
+            Debug.LogWarning("No target set for the turret.");
+            return;
+        }
+
+        // Hedefin yönünü hesapla
+        Vector3 direction = currentTarget.transform.position - TurretHead.transform.position;
+
+        // Yalnýzca Y ekseni üzerinde döndürmek için Y düzlemine projekte et
+        direction.x = 270f;
+
+        if (direction.sqrMagnitude == 0f)
+        {
+            Debug.LogWarning("Target is exactly at the same position as the turret head.");
+            return;
+        }
+
+        // Hedef yönüne bakacak þekilde rotasyonu hesapla
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = Quaternion.Lerp(TurretHead.transform.rotation, lookRotation, Time.deltaTime * 10f).eulerAngles;
-        TurretHead.transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        Debug.Log("Current Target Direction: " + direction);
+
+
+        // Yumuþak dönüþ için Lerp kullanarak rotasyonu hesapla
+        TurretHead.transform.rotation = Quaternion.Lerp(TurretHead.transform.rotation, lookRotation, Time.deltaTime * 10f);
+
+        Debug.Log("Current Target Location: " + currentTarget.transform.position);
+        Debug.Log("Current Target Direction: " + direction);
+
     }
 
-   void Fire()
+    void Fire()
     {
         Debug.Log("Firing... ");
-        Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.identity);
+        Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.Euler(0, 0, 90));
 
         if(FirePoint2 != null)
         {
-            Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.identity);
+            Instantiate(TurretBulletPrefab, FirePoint2.transform.position, Quaternion.Euler(0, 0, 90));
+            TurretBulletPrefab.GetComponent<Projectile>().SetDamage(bulletDamage);
 
         }
     }
