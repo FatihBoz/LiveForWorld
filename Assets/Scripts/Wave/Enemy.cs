@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float detectionRange = 10f;
     [SerializeField] private float timeBetweenPathUpdates = 0.5f;
-    [SerializeField] private float attackRange = 5f;
+    [SerializeField] protected float attackRange = 5f;
     [SerializeField] private float attackDamage = 5f;
 
 
@@ -20,13 +20,13 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = true;
         animator = GetComponent<Animator>();
     }
 
 
     protected void FixedUpdate()
     {
+        Animate();
         //Set enemies' destination in every certain amount of time instead of every frame.
         if (Time.time - lastPathUpdateTime >= timeBetweenPathUpdates)
         {
@@ -41,16 +41,18 @@ public class Enemy : MonoBehaviour
 
         if (target != null) 
         {
-
-            float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-            if (distanceToTarget <= attackRange && Time.time >= attackTime + attackCooldown)
-            {
-                Attack();
-                print("girdi1");
-                attackTime = Time.time;
-            }
+            RotateTowardsPlayer(target.transform);
+            CalculateDistanceAndAttack();
         }
+
+
+    }
+
+    private void RotateTowardsPlayer(Transform player)
+    {
+        Vector3 direction = (player.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
     }
 
     private void DetectEnemies()
@@ -62,16 +64,35 @@ public class Enemy : MonoBehaviour
             {
                 target = collider.transform;
                 agent.SetDestination(target.position);
-                print(agent.name);
             }
         }
     }
 
-
-    protected virtual void Attack()
+    protected virtual void CalculateDistanceAndAttack()
     {
-        //animator.SetTrigger("EnemyAttack");
-        print("attack");
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+        if (distanceToTarget <= attackRange && Time.time >= attackTime + attackCooldown)
+        {
+            Attack();
+        }
+    }
+
+
+    public virtual void AttackAnimationEvent()
+    {
+        print("atak");
+    }
+
+    private void Attack()
+    {
+        animator.SetTrigger("EnemyAttack");
+        attackTime = Time.time;
+    }
+
+    private void Animate()
+    {
+        animator.SetFloat("Speed",agent.speed);
     }
 
     public void SetTarget(Transform target)
