@@ -26,6 +26,14 @@ public class Turret : Building
     public float fireRate = 1f;
     float bulletDamage = 10;
 
+    [Header("SOUND EFFECT")]
+    private AudioSource audioSource;
+    public AudioClip turretShootFx;
+
+    public void Awake()
+    {
+        audioSource=GetComponent<AudioSource>();
+    }
     public override void UpgradeBuilding()
     {
         if (level < 3 && PlayerProperties.Instance.getOre() > cost)
@@ -40,7 +48,7 @@ public class Turret : Building
 
             damage += 50;
 
-            Debug.Log("Maden seviyesi yükseltildi! Yeni seviye: " + level);
+            Debug.Log("Maden seviyesi yï¿½kseltildi! Yeni seviye: " + level);
 
             Instantiate(TurretLvl2);
             Destroy(this);
@@ -78,7 +86,7 @@ public class Turret : Building
 
             RotateHead();
 
-            // Ateþ etme süresi dolduysa, ateþ et
+            // Ateï¿½ etme sï¿½resi dolduysa, ateï¿½ et
             if (fireCountdown <= 0f)
             {
                 Fire();
@@ -116,7 +124,7 @@ public class Turret : Building
 
     void OnDrawGizmosSelected()
     {
-        // Algýlama alanýný görselleþtirmek için bir çember çizer
+        // Algï¿½lama alanï¿½nï¿½ gï¿½rselleï¿½tirmek iï¿½in bir ï¿½ember ï¿½izer
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
@@ -130,9 +138,9 @@ public class Turret : Building
             return;
         }
         print(currentTarget);
-        // Hedefin yönünü hesapla
+        // Hedefin yï¿½nï¿½nï¿½ hesapla
         Vector3 direction = currentTarget.transform.position - TurretHead.transform.position;
-        // Yalnýzca Y ekseni üzerinde döndürmek için Y düzlemine projekte et
+        // Yalnï¿½zca Y ekseni ï¿½zerinde dï¿½ndï¿½rmek iï¿½in Y dï¿½zlemine projekte et
 
         if (direction.sqrMagnitude == 0f)
         {
@@ -140,7 +148,7 @@ public class Turret : Building
             return;
         }
 
-        // Hedef yönüne bakacak þekilde rotasyonu hesapla
+        // Hedef yï¿½nï¿½ne bakacak ï¿½ekilde rotasyonu hesapla
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 lookRotationEu = lookRotation.eulerAngles;
         lookRotationEu.x = 270f;
@@ -148,13 +156,14 @@ public class Turret : Building
         lookRotation.eulerAngles=lookRotationEu;
 
 
-        // Yumuþak dönüþ için Lerp kullanarak rotasyonu hesapla
+        // Yumuï¿½ak dï¿½nï¿½ï¿½ iï¿½in Lerp kullanarak rotasyonu hesapla
         TurretHead.transform.rotation = Quaternion.Lerp(TurretHead.transform.rotation, lookRotation, Time.deltaTime * 10f);
 
     }
 
     void Fire()
     {
+        audioSource.PlayOneShot(turretShootFx);
         Vector3 lookRotationEu = TurretHead.transform.rotation.eulerAngles;
         lookRotationEu.x = 0;
         lookRotationEu.y += 180;
