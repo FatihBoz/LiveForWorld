@@ -12,7 +12,8 @@ public class WaveSpawn : MonoBehaviour
     public float distance;
     private float spawnTime=0;
     private float spawnCooldown=5f;
-    private Vector3[] pos;
+    [Header("player position + pos")]
+    public Vector3[] pos;
 
     private float randomCircleSpawnTime;
     private float circleSpawnedTime;
@@ -34,14 +35,6 @@ public class WaveSpawn : MonoBehaviour
     }
     void Start()
     {
-        pos=new Vector3[]
-        {
-            new Vector3(1.5f, 10.5f, 15f),
-            new Vector3( 0, 10f, 10f)
-        ,new Vector3(-0.5f, 10.2f, 10f)
-        ,new Vector3(1.2f, 10f, 10f)
-        };
-
 
         // CircleWave circleWave = new CircleWave(player,prefabs[0],spawnCount,distance);
         // waveObjCount=circleWave.Spawn().Count;
@@ -96,7 +89,7 @@ public class WaveSpawn : MonoBehaviour
                     prefabs[Random.Range(0,prefabs.Length)],
                     rowCount*5,
                     rowCount,
-                    pos[Random.Range(0,pos.Length)]+new Vector3(10,0,10)
+                    player.transform.position+pos[Random.Range(0,pos.Length)]
                     );    
                 setWave.Spawn();
                 

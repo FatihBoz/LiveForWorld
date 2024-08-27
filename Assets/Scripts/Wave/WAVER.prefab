@@ -51,5 +51,10 @@ MonoBehaviour:
   - {fileID: 206199116, guid: c6cfc32748fb5004aa11a1be074b5c58, type: 3}
   - {fileID: 7974302517980751820, guid: 6be18c83797e9b14cb2dc9160b155d89, type: 3}
   spawnCount: 5
-  distance: 100
+  distance: 20
+  pos:
+  - {x: 15, y: 10, z: 15}
+  - {x: -15, y: 10, z: -15}
+  - {x: -15, y: 10, z: 15}
+  - {x: 15, y: 10, z: -15}
   setWaveCooldown: 30

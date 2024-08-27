@@ -27,7 +27,7 @@ public override List<Enemy> Spawn()
             spawnedWaveObj.SetTarget(Target);
             float x = Target.position.x+Mathf.Cos(startDegree+(i*2*Mathf.PI/Count))*distance;
             float z = Target.position.z+Mathf.Sin(startDegree+(i*2*Mathf.PI/Count))*distance;
-            spawnedWaveObj.transform.position=new Vector3(x,1f,z);
+            spawnedWaveObj.transform.position=new Vector3(x,10f,z);
             spawnedEntities.Add(spawnedWaveObj);
         }
         return spawnedEntities;
