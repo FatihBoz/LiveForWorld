@@ -17,7 +17,7 @@ public class WaveSpawn : MonoBehaviour
     private float randomCircleSpawnTime;
     private float circleSpawnedTime;
 
-    public float setWaveCooldown=30f;
+    public float setWaveCooldown=2;
     private float setWaveTime;
     private void Awake() 
     { 
@@ -35,7 +35,8 @@ public class WaveSpawn : MonoBehaviour
     void Start()
     {
         pos=new Vector3[]
-        {new Vector3(1.5f, 1.2f, 10f),
+        {
+            new Vector3(1.5f, 1.5f, 15f),
             new Vector3( 0, 0f, 10f)
         ,new Vector3(-0.5f, 1.2f, 10f)
         ,new Vector3(1.2f, 0f, 10f)
@@ -95,7 +96,8 @@ public class WaveSpawn : MonoBehaviour
                     prefabs[Random.Range(0,prefabs.Length)],
                     rowCount*5,
                     rowCount,
-                    pos[Random.Range(0,pos.Length)]);    
+                    pos[Random.Range(0,pos.Length)]+new Vector3(10,0,10)
+                    );    
                 setWave.Spawn();
                 
             }
