@@ -18,17 +18,24 @@ public class Enemy : MonoBehaviour
     protected float attackTime = 0;
     private float currentHp;
 
-
+    private bool isAlive;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         currentHp = maxHp;
+        isAlive=true;
     }
 
 
     protected void FixedUpdate()
     {
+        if (!isAlive)
+        {
+            agent.isStopped=true;
+            return;
+        }
+
         Animate();
 
         //Set enemies' destination in every certain amount of time instead of every frame.
@@ -121,11 +128,17 @@ public class Enemy : MonoBehaviour
         currentHp -= damageAmount;
         if(currentHp <= 0)
         {
-
+            isAlive=false;
             WaveSpawn.Instance.DecreaseWaveObjCount();
             //Die Animation
-            Destroy(this.gameObject);
+            agent.isStopped=true;
+            Destroy(GetComponent<Collider>());
+            animator.SetTrigger("Die");
         }
     }
 
+    public void DestroyCh()
+    {
+        Destroy(gameObject,0.3f);
+    }
 }
