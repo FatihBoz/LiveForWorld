@@ -36,10 +36,10 @@ public class WaveSpawn : MonoBehaviour
     {
         pos=new Vector3[]
         {
-            new Vector3(1.5f, 1.5f, 15f),
-            new Vector3( 0, 0f, 10f)
-        ,new Vector3(-0.5f, 1.2f, 10f)
-        ,new Vector3(1.2f, 0f, 10f)
+            new Vector3(1.5f, 10.5f, 15f),
+            new Vector3( 0, 10f, 10f)
+        ,new Vector3(-0.5f, 10.2f, 10f)
+        ,new Vector3(1.2f, 10f, 10f)
         };
 
 
@@ -68,8 +68,8 @@ public class WaveSpawn : MonoBehaviour
             if (Time.time>=spawnCooldown+spawnTime)
             {
                 spawnTime=Time.time;
-                Vector3 v3Pos = Camera.main.ViewportToWorldPoint(pos[Random.Range(0,pos.Length)]);
-                v3Pos.y=1f;
+                Vector3 v3Pos = pos[Random.Range(0,pos.Length)];
+                //v3Pos.y=1f;
                 Enemy spawnedObject = Instantiate(prefabs[Random.Range(0,prefabs.Length)]);
                 spawnedObject.SetTarget(player);
                 spawnedObject.transform.position= v3Pos;
