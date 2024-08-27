@@ -52,7 +52,7 @@ public class AstarAI : MonoBehaviour {
     }
 
     public void Update () {
-        if (Time.time > lastRepath + repathRate && seeker.IsDone()) {
+        if (Time.time > lastRepath + repathRate && seeker.IsDone() && targetPosition!=null) {
             lastRepath = Time.time;
 
             // Start a new path to the targetPosition, call the the OnPathComplete function
