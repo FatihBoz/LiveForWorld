@@ -70,7 +70,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ba69d56d3b51159428852e205178eab8, type: 3}
   m_PrefabInstance: {fileID: 9132060832536087910}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1916141434883360452
+--- !u!114 &-6697223840776858905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,11 +79,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8249170788878348343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe3e4dbe47fc07438703a1328ecc253, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a52b88d919d6314b860b8a7d3fbd271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  cost: 10
-  level: 1
-  isPressed: 0

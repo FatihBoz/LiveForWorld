@@ -54,25 +54,8 @@ public class ConstructionSite : MonoBehaviour
     private void ActivateBuilding()
     {
         Debug.Log("Activatiing buikding");
-        if (buildingPrefab != null)
-        {
-            print("prefab var");
-        }
-        if (PlayerProperties.Instance != null)
-        {
-            print("Instance var");
-        }
-        if (PlayerProperties.Instance.getOre() > buildingPrefab.GetComponent<Building>().cost){
-            if(buildingPrefab == null)
-            {
-                print("prefab yok");
-            }
-            if (PlayerProperties.Instance == null)
-            {
-                print("Instance yok");
-            }
 
-            Debug.Log("ise girdi");
+        if (PlayerProperties.Instance.getOre() > buildingPrefab.GetComponent<Building>().cost){
             PlayerProperties.Instance.ChangeOreAmount(-buildingPrefab.GetComponent<Building>().cost);
             Destroy(this.gameObject);
             Instantiate(buildingPrefab, transform.position, Quaternion.identity);
