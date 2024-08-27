@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 1077356409}
   - component: {fileID: 206199118}
   - component: {fileID: 206199117}
-  - component: {fileID: 206199116}
+  - component: {fileID: 1652763208487431454}
   - component: {fileID: 206199119}
   - component: {fileID: 412632426}
   - component: {fileID: -3204120024441246413}
@@ -361,6 +361,7 @@ Transform:
   m_Children:
   - {fileID: 1024790831}
   - {fileID: 1423454223}
+  - {fileID: 1330733958368911476}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -414,7 +415,7 @@ CapsuleCollider:
   m_Height: 6.667787
   m_Direction: 1
   m_Center: {x: -0.0446136, y: 1.7211154, z: 0.2728777}
---- !u!114 &206199116
+--- !u!114 &1652763208487431454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -423,7 +424,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1077356408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ebbbe1234f59c4a94e778061f54926, type: 3}
+  m_Script: {fileID: 11500000, guid: 76352756dcfa2a44dba30002f6f4a8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 200
@@ -434,6 +435,8 @@ MonoBehaviour:
   attackDamage: 20
   bloodEffect: {fileID: 5351300510799967930, guid: 6a3a8d6bf34ef574c8025cae25ea4b54, type: 3}
   getHitSoundFx: {fileID: 8300000, guid: 4e545e44fcec3e54b945f96f53e8abe9, type: 3}
+  attackPoint: {fileID: 1330733958368911476}
+  attackRangeForSphere: 1.98
 --- !u!195 &206199119
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1050,5 +1053,36 @@ Transform:
   m_Children:
   - {fileID: 21698125}
   m_Father: {fileID: 1024790831}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1267684768943549829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1330733958368911476}
+  m_Layer: 6
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1330733958368911476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267684768943549829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.49, z: 1.37}
+  m_LocalScale: {x: 1, y: 1, z: 21.18}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077356410}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -25,7 +25,7 @@ public class PlayerProperties : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Oyun boyunca saklanmasýný saðla
+            DontDestroyOnLoad(gameObject); // Oyun boyunca saklanmasï¿½nï¿½ saï¿½la
         }
         else
         {
@@ -48,5 +48,14 @@ public class PlayerProperties : MonoBehaviour
     public float getOre()
     {
         return ore;
+    }
+    public float DecreasePlayerHealth(float amount)
+    {
+        playerHealth-=amount;
+        if(playerHealth<=0)
+        {
+            Debug.Log(playerHealth);
+        }
+        return playerHealth;
     }
 }

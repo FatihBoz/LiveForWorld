@@ -75,7 +75,7 @@ public class WaveSpawn : MonoBehaviour
                 randomCircleSpawnTime=Random.Range(20f,30f);
                 int inGameSpawnCount = Random.Range(spawnCount,30);
                 CircleWave circleWave1 = new CircleWave(player,prefabs[0],inGameSpawnCount,distance);
-                CircleWave circleWave2 = new CircleWave(player,prefabs[1],inGameSpawnCount,distance, (Mathf.PI/inGameSpawnCount));
+                CircleWave circleWave2 = new CircleWave(player,prefabs[3],inGameSpawnCount,distance, (Mathf.PI/inGameSpawnCount));
                 circleWave1.Spawn();
                 circleWave2.Spawn();
             }

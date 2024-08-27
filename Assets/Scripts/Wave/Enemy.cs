@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float detectionRange = 10f;
     [SerializeField] private float timeBetweenPathUpdates = 0.5f;
     [SerializeField] protected float attackRange = 5f;
-    [SerializeField] private float attackDamage = 5f;
+    [SerializeField] protected float attackDamage = 5f;
     [SerializeField] private GameObject bloodEffect;
     public AudioClip getHitSoundFx;
 
@@ -122,7 +122,8 @@ public class Enemy : MonoBehaviour
 
     public virtual void AttackAnimationEvent()
     {
-        print("atak");
+        print(gameObject.name+" atak");
+
     }
 
     private void Attack()
