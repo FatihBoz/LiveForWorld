@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 206199117}
   - component: {fileID: 206199116}
   - component: {fileID: 206199119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Polyart_Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}

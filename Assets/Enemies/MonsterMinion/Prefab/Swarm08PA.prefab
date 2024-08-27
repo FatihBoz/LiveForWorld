@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4828903625311234732}
   - component: {fileID: 7974302517980751820}
   - component: {fileID: 3301673259851135370}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Swarm08PA
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
