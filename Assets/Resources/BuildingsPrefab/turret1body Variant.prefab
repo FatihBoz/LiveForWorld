@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5802013188939344569
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8700617353114198275, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.393549
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.1399994
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65702495048144492, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+      propertyPath: m_Name
+      value: turret1body Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+--- !u!4 &6273053844232539474 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+  m_PrefabInstance: {fileID: 5802013188939344569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6648876077195286504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 80f02c7dcc2d22c45a282342bd4519c1, type: 3}
+  m_PrefabInstance: {fileID: 5802013188939344569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6441923714197910949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648876077195286504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4953997, y: 2.25322, z: 0.99240875}
+  m_Center: {x: -0.24769986, y: 0.62661004, z: 0.0037956238}
+--- !u!114 &5624246072362788734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648876077195286504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479045fdd8fed9f43a057dfdf7f2a964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  cost: 50
+  level: 1
+  damage: 0
+  TurretBulletPrefab: {fileID: 8782668851439358717, guid: 6bb65a29de0b86740a47974816fbbbb0, type: 3}
+  detectionRadius: 10
+--- !u!1001 &8515608113660730483
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6273053844232539474}
+    m_Modifications:
+    - target: {fileID: -8700617353114198275, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.039548874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.98899937
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.046445847
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65702495048144492, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+      propertyPath: m_Name
+      value: turret1head
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+--- !u!1 &8857715872155017506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0390898a63267174d9f2acb401857a8d, type: 3}
+  m_PrefabInstance: {fileID: 8515608113660730483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4791777756944917295
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857715872155017506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2083e4b63ae0b846bedf5ff7b7c0c22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
