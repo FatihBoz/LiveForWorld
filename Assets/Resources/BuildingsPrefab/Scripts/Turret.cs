@@ -71,7 +71,12 @@ public class Turret : Building
     public override void Update()
     {
         base.Update();
-        
+        if (health<=0)
+        {
+            TurretHeadAnimator.SetBool("FoundEnemy", false); 
+            return;
+        }
+
         if(currentTarget == null)
         {
             FindNearestEnemy();

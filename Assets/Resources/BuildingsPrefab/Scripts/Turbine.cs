@@ -10,7 +10,7 @@ public class Turbine : Building
 
     void OnTriggerEnter(UnityEngine.Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && health>0)
         {
             Debug.Log("D��man t�rbine yakaland� ");
             // Knockback etkisi uygula

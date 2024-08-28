@@ -80,5 +80,9 @@ public abstract class Building : MonoBehaviour
 
         }
     }
+    public bool isDead()
+    {
+        return health<=0;
+    }
 
 }

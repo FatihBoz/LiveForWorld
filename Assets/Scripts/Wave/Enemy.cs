@@ -87,6 +87,7 @@ public class Enemy : MonoBehaviour
 
         Transform nearestTarget=null;
         float distance = Mathf.Infinity;
+        
         foreach (Collider collider in hitColliders)
         {   
                 Vector3 distanceVec=collider.transform.position-transform.position;
@@ -94,8 +95,11 @@ public class Enemy : MonoBehaviour
                 float distanceR=distanceVec.sqrMagnitude;
                 if (distanceR<=distance)
                 {
-                    distance=distanceR;
-                    nearestTarget=collider.transform;
+                    if (collider.gameObject.layer==LayerMask.NameToLayer("Player")||(collider.gameObject.layer==LayerMask.NameToLayer("Building") && !collider.GetComponent<Building>().isDead()))
+                    {
+                        distance=distanceR;
+                        nearestTarget=collider.transform;
+                    }
                 }
                // agent.SetDestination(target.position);
         }
