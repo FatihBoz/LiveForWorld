@@ -2064,6 +2064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialTextManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1085479711620884836, guid: 265db05facf156d41860922ff8d79b0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 265db05facf156d41860922ff8d79b0b, type: 3}
 --- !u!4 &195496459 stripped
@@ -2142,6 +2146,10 @@ PrefabInstance:
     - target: {fileID: 1928257031199849382, guid: 6366ab60ad62e7043a48527036823a85, type: 3}
       propertyPath: m_Name
       value: TutorialManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928257031199849382, guid: 6366ab60ad62e7043a48527036823a85, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6366ab60ad62e7043a48527036823a85, type: 3}
@@ -6296,6 +6304,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03fe551f8327cef40b199638020c8481, type: 3}
+--- !u!1 &1965451667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965451669}
+  - component: {fileID: 1965451668}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1965451668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965451667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0018ce41c49df4d99f025eb5641422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1965451669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965451667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 905.4468, y: -115.90161, z: 191.75781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1999358534 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4131966637823695795, guid: 4b83fb5853c0a644c886cb723f657b39, type: 3}

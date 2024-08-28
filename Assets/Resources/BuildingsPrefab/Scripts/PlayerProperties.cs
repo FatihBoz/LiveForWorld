@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerProperties : MonoBehaviour
 {
+    public static Action OnPlayerDeath;
+
     float ore = 100;
 
     float mainBuildingHealth = 500;
