@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float attackRange = 5f;
     [SerializeField] protected float attackDamage = 5f;
     [SerializeField] private GameObject bloodEffect;
+    [SerializeField] public float speedX=4f;
     public AudioClip getHitSoundFx;
 
     protected Transform target;
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         astarAI= GetComponent<AstarAI>();
+        astarAI.speed=speedX;
         chController= GetComponent<CharacterController>();
     //  agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
