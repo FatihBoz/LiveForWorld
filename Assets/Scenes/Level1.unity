@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11464222, g: 0.33011943, b: 0.71255326, a: 1}
+  m_IndirectSpecularColor: {r: 0.11464222, g: 0.3301195, b: 0.7125536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6662,6 +6662,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6138795387845773860, guid: 03fe551f8327cef40b199638020c8481, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6972062225047511004, guid: 03fe551f8327cef40b199638020c8481, type: 3}
       propertyPath: OreText
       value: 
@@ -6685,6 +6689,10 @@ PrefabInstance:
     - target: {fileID: 7273001950139163106, guid: 03fe551f8327cef40b199638020c8481, type: 3}
       propertyPath: m_Name
       value: cCcGemi Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273001950139163106, guid: 03fe551f8327cef40b199638020c8481, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8044893560248793944, guid: 03fe551f8327cef40b199638020c8481, type: 3}
       propertyPath: m_RootOrder
@@ -6732,6 +6740,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03fe551f8327cef40b199638020c8481, type: 3}
+--- !u!1 &1915669948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7273001950139163106, guid: 03fe551f8327cef40b199638020c8481, type: 3}
+  m_PrefabInstance: {fileID: 1915669947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1915669949
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915669948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: 258e0a3194f98b64a830fe3b97824ea5, type: 3}
 --- !u!1 &1965451667
 GameObject:
   m_ObjectHideFlags: 0
