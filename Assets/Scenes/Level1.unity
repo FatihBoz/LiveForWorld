@@ -2303,6 +2303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinematicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2444223091443848609, guid: 8d0c18b5a2ab635439ec15a126bae8e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2444223091443848611, guid: 8d0c18b5a2ab635439ec15a126bae8e1, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -2630,11 +2634,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1324537482113742030, guid: 4b83fb5853c0a644c886cb723f657b39, type: 3}
       propertyPath: m_text
-      value: SpaceShip Health
+      value: "Uzay Gemisi Sa\u011Fl\u0131k"
       objectReference: {fileID: 0}
     - target: {fileID: 1324537482113742030, guid: 4b83fb5853c0a644c886cb723f657b39, type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1324537482113742030, guid: 4b83fb5853c0a644c886cb723f657b39, type: 3}
       propertyPath: m_fontStyle
@@ -2654,7 +2658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1324537482113742030, guid: 4b83fb5853c0a644c886cb723f657b39, type: 3}
       propertyPath: m_fontSizeBase
-      value: 24
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1324537482113742030, guid: 4b83fb5853c0a644c886cb723f657b39, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -5814,7 +5818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1514174579505978587, guid: 703dab380c43b074b9bba941932c74e4, type: 3}
       propertyPath: m_text
-      value: Player Health
+      value: "Sa\u011Fl\u0131k"
       objectReference: {fileID: 0}
     - target: {fileID: 1514174579505978587, guid: 703dab380c43b074b9bba941932c74e4, type: 3}
       propertyPath: m_fontSize
@@ -6935,6 +6939,10 @@ PrefabInstance:
     - target: {fileID: 3167883965229033558, guid: b7ba5629e10f8064fb72854e292209f3, type: 3}
       propertyPath: m_Name
       value: BuildingInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167883966272233768, guid: b7ba5629e10f8064fb72854e292209f3, type: 3}
+      propertyPath: m_text
+      value: "Yap\u0131 \u0130smi:\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4536805357290319392, guid: b7ba5629e10f8064fb72854e292209f3, type: 3}
       propertyPath: m_AnchorMax.x

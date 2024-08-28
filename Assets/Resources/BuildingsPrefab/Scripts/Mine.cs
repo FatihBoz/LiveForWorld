@@ -17,7 +17,7 @@ public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
         if(level == 1)
         {
 
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y+3f, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y+0.5f, this.transform.position.z);
 
             // Mevcut GameObject'in rotasyonunu g�ncelle
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
