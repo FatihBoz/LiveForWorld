@@ -23,10 +23,8 @@ public class WaveSpawn : MonoBehaviour
     [Header("player position + pos")]
     public Vector3[] pos;
 
-    private float randomCircleSpawnTime;
     private float circleSpawnedTime;
 
-    public float setWaveCooldown=2;
     private float setWaveTime;
 
     private bool phaseFinished;
@@ -78,7 +76,6 @@ public class WaveSpawn : MonoBehaviour
 
 
 
-         randomCircleSpawnTime=Random.Range(10f,20f);
 /*         for (int i = 0; i < spawnCount; i++)
         {
             WaveObj spawnedObject = Instantiate(prefab);

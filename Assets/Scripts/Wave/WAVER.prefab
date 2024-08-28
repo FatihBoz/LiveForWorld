@@ -81,3 +81,4 @@ MonoBehaviour:
   - {x: -0.9, y: 10, z: 33.1}
   - {x: 60.2, y: 10, z: -9.4}
   setWaveCooldown: 10
+  wave5Cooldown: 90
