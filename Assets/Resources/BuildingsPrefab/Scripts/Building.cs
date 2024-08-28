@@ -16,6 +16,8 @@ public abstract class Building : MonoBehaviour
     private bool firstChange;
 
     public static Action OnBuildingHealthChanged;
+
+    private GameObject tempObj;
     
     public virtual void ChangeHealth(int health)
     { 
@@ -62,11 +64,18 @@ public abstract class Building : MonoBehaviour
         {
             isPressed = true;
 
-            BuildingInfo.Instance.gameObject.SetActive(true);
+            tempObj = BuildingInfo.Instance.gameObject;
+            tempObj.SetActive(true);
             BuildingInfo.Instance.AssignHealth(this.gameObject);
             BuildingInfo.Instance.UpdateText(this.gameObject);
 
         }
+    }
+
+    private void OnDestroy()
+    {
+        isPressed = false;
+        tempObj.SetActive(false);
     }
 
 
@@ -75,9 +84,7 @@ public abstract class Building : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isPressed = false;
-            BuildingInfo.Instance.gameObject.SetActive(false);
-
-
+            tempObj.SetActive(false);
         }
     }
 
