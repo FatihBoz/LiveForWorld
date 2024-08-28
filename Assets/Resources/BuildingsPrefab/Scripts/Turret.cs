@@ -29,8 +29,11 @@ public class Turret : Building
     private AudioSource audioSource;
     public AudioClip turretShootFx;
 
+    private PlayerController player;
+
     public void Awake()
     {
+        player=FindObjectOfType<PlayerController>();
         audioSource=GetComponent<AudioSource>();
     }
     public override void UpgradeBuilding()
@@ -97,7 +100,15 @@ public class Turret : Building
             fireCountdown -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        Vector3 distanceBetweenPlayer = transform.position-player.transform.position;
+        distanceBetweenPlayer.y=0;
+        float distanceVal= distanceBetweenPlayer.magnitude;
+        if (Input.GetKeyDown(KeyCode.R) && distanceVal<=4)
+        {
+            Debug.Log("repaired");    
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && distanceVal<=4)
         {
             UpgradeBuilding();
         }
