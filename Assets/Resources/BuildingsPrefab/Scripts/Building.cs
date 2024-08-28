@@ -37,13 +37,16 @@ public abstract class Building : MonoBehaviour
     public void RepairBuilding()
     {
         int missingHealth = maxHealth - health;
-        PlayerProperties.Instance.ChangeOreAmount(-missingHealth);
-        health += missingHealth;
+        if (PlayerProperties.Instance.getOre()>missingHealth)
+        {
+            PlayerProperties.Instance.ChangeOreAmount(-missingHealth);
+            health += missingHealth;
+            BuildingInfo.Instance.UpdateHealth(this.gameObject);
+        }
 
-        BuildingInfo.Instance.UpdateHealth(this.gameObject);
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && isPressed)
         {

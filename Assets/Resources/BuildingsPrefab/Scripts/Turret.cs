@@ -68,8 +68,10 @@ public class Turret : Building
         }
     }
 
-    void Update()
+    public override void Update()
     {
+        base.Update();
+        
         if(currentTarget == null)
         {
             FindNearestEnemy();
