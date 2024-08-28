@@ -133,7 +133,6 @@ public class Turret : Building
             }
         }
         if(nearestEnemy != null) { Debug.Log("Found Enemy"); currentTarget = nearestEnemy; }
-
     }
 
     void OnDrawGizmosSelected()
@@ -184,7 +183,7 @@ public class Turret : Building
         lookRotationEu.y += 180;
         Vector3 direction = currentTarget.transform.position-FirePoint.transform.position;
         GameObject bullet = Instantiate(TurretBulletPrefab, FirePoint.transform.position, Quaternion.LookRotation(direction));
-            bullet.GetComponent<Projectile>().SetDamage(bulletDamage);
+        bullet.GetComponent<Projectile>().SetDamage(bulletDamage);
 
         if (FirePoint2 != null)
         {

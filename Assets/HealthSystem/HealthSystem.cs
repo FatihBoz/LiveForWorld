@@ -18,7 +18,7 @@ public class HealthSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.GetComponent<Building>().health = health;
+        this.gameObject.GetComponent<Building>().health = health; //!NULL REFERENCE EXCEPTION
         this.gameObject.GetComponent<Building>().maxHealth = maxHealth;
 
         

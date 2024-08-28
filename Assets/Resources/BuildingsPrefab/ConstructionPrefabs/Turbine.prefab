@@ -11,9 +11,33 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 23cc6ab1e37cf964db04b420e7193062, type: 2}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2886193
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Size.y
+      value: 3.1613932
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Size.z
+      value: 1.1650869
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Center.x
+      value: 0.056222923
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Center.y
+      value: 1.080697
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.024998456
+      objectReference: {fileID: 0}
     - target: {fileID: 6879264094550411168, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_Name
-      value: ConstructionSite
+      value: Turbine (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_RootOrder
@@ -21,15 +45,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 98.2786
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 150.67
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.73
+      value: -8.9
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_LocalRotation.w
