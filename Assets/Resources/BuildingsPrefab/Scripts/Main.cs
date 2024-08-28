@@ -18,7 +18,7 @@ public class Main : Building
     {
         base.ChangeHealth(health);
         healthBar.value=this.health;
-        if (health <= 0)
+        if (this.health <= 0)
         {
             OnSpaceshipCollapsed?.Invoke();
         }
