@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].SetWaveQuantity
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[1].SetWaveCooldown
@@ -329,11 +329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].CircleWaveQuantity
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].NormalWaveCooldown
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].NormalWaveQuantity
@@ -365,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[0]
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[1]
@@ -373,11 +373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[2]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[3]
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[1].enemyRates.Array.data[0]
