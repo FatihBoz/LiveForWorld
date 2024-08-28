@@ -16,6 +16,7 @@ public abstract class Building : MonoBehaviour
     private bool firstChange;
 
     public static Action OnBuildingHealthChanged;
+    
     public virtual void ChangeHealth(int health)
     { 
         if(!firstChange)
