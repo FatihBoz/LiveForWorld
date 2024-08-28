@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
     private void MainMenu_OnCinematicFinished()
     {
         BackgroundImage.SetActive(true);
-        ButtonPanel.GetComponent<Image>().DOFade(.5f, 1f);
+        ButtonPanel.GetComponent<Image>().DOFade(.45f, 1f);
         foreach (var button in ButtonTexts)
         {
             button.DOFade(1f,2f);
