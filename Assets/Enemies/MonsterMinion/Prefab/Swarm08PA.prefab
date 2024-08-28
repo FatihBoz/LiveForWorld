@@ -114,7 +114,7 @@ MonoBehaviour:
   attackRange: 2.5
   attackDamage: 5
   bloodEffect: {fileID: 5351300510799967930, guid: cdca3c73190c0d34eaacbad679678625, type: 3}
-  speedX: 4
+  speedX: 6
   getHitSoundFx: {fileID: 0}
   attackPoint: {fileID: 2675099429982037794}
   attackRangeForSphere: 1.12
