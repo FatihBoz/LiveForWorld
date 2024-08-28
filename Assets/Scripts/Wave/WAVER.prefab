@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveInfos:
   - SetWaveQuantity: 2
-    SetWaveCooldown: 45
+    SetWaveCooldown: 30
     CircleWaveQuantity: 0
     CircleWaveCooldown: 15
     NormalWaveQuantity: 20
@@ -56,7 +56,7 @@ MonoBehaviour:
     - 1
     - 0
     - 4
-  - SetWaveQuantity: 3
+  - SetWaveQuantity: 2
     SetWaveCooldown: 45
     CircleWaveQuantity: 0
     CircleWaveCooldown: 50
@@ -93,12 +93,12 @@ MonoBehaviour:
     SetWaveCooldown: 60
     CircleWaveQuantity: 0
     CircleWaveCooldown: 50
-    NormalWaveQuantity: 40
-    NormalWaveCooldown: 2
+    NormalWaveQuantity: 60
+    NormalWaveCooldown: 1
     enemyRates:
     - 6
     - 2
-    - 1
+    - 4
     - 4
   phaseCooldown: 20
   player: {fileID: 0}

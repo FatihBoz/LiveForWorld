@@ -6,10 +6,14 @@ using UnityEngine;
 public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
 {
     private float productionTimer = 0f;
+    
+    private float speed;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        speed=1f;
         if(level == 1)
         {
 
@@ -32,7 +36,7 @@ public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
         productionTimer += Time.deltaTime;
 
         // Zamanlay�c� belirlenen aral��a ula�t�ysa �retimi ger�ekle�tir
-        if (productionTimer >= level && health>0)
+        if (productionTimer >= speed && health>0)
         {
             ProduceResource();
             productionTimer = 0f; // Zamanlay�c�y� s�f�rla
@@ -69,6 +73,15 @@ public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
 
             level++;
 
+            if (level==2)
+            {
+                speed=0.75f;
+            }
+            else if(level==3)
+            {
+                speed=0.5f;
+            }
+            
             GameObject temp = Instantiate(BuildingsPrefab.Instance.mineLevels[level-1],this.transform.position, this.transform.rotation);
 
 
