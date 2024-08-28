@@ -49,7 +49,7 @@ MonoBehaviour:
     SetWaveCooldown: 30
     CircleWaveQuantity: 0
     CircleWaveCooldown: 15
-    NormalWaveQuantity: 20
+    NormalWaveQuantity: 40
     NormalWaveCooldown: 2
     enemyRates:
     - 4
@@ -60,7 +60,7 @@ MonoBehaviour:
     SetWaveCooldown: 45
     CircleWaveQuantity: 0
     CircleWaveCooldown: 50
-    NormalWaveQuantity: 20
+    NormalWaveQuantity: 40
     NormalWaveCooldown: 2
     enemyRates:
     - 3
@@ -87,7 +87,7 @@ MonoBehaviour:
     enemyRates:
     - 6
     - 2
-    - 3
+    - 1
     - 4
   - SetWaveQuantity: 4
     SetWaveCooldown: 60
@@ -98,7 +98,7 @@ MonoBehaviour:
     enemyRates:
     - 6
     - 2
-    - 4
+    - 1
     - 4
   phaseCooldown: 20
   player: {fileID: 0}
