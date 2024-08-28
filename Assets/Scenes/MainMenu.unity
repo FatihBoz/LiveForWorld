@@ -216,7 +216,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level1 1
+          m_StringArgument: Level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8923973
@@ -1828,6 +1828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e520eec3b5df03409e45d7044797982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CinematicObject: {fileID: 558187796}
   text: {fileID: 1829996135}
   Panels:
   - {fileID: 558187796}

@@ -32,7 +32,6 @@ public class WaveSpawn : MonoBehaviour
     public static Action OnLastWaveSpawned;
     private bool lastWaver;
     public static Action Wave5CountdownEnded;
-
     public float wave5Cooldown;
     private float wave5Time;
     private void Awake() 

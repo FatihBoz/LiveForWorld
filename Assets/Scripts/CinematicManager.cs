@@ -9,6 +9,7 @@ using System;
 public class CinematicManager : MonoBehaviour
 {
     public static Action OnCinematicFinished;
+    public GameObject CinematicObject;
     public TextMeshProUGUI text;
     public GameObject[] Panels;
 
@@ -18,6 +19,7 @@ public class CinematicManager : MonoBehaviour
 
         if (!startCinematic)
         {
+            CinematicObject.SetActive(true);
             StartCoroutine(PlayCinematic());
             startCinematic = true;
         }
@@ -80,6 +82,7 @@ public class CinematicManager : MonoBehaviour
 
     private void Cinematic_Wave5Ended()
     {
+        CinematicObject.SetActive(true);
         StartCoroutine(PlayCinematic());
     }
 
