@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingInfo : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class BuildingInfo : MonoBehaviour
     public TextMeshProUGUI buildingLevel;
 
     public static BuildingInfo Instance;
+
+    public Slider buildingHealth;
+
 
 
     private void Awake()
@@ -30,26 +34,19 @@ public class BuildingInfo : MonoBehaviour
     private void Start()
     {
         this.gameObject.SetActive(false);
+
     }
 
+    public void AssignHealth(GameObject building)
+    {
+        buildingHealth.maxValue = building.GetComponent<Building>().maxHealth;
+        buildingHealth.value = building.GetComponent<Building>().health;
+    }
 
-
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        this.gameObject.SetActive(true);
-    //        UpdateText();
-    //    }
-    //}
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        this.gameObject.SetActive(false);
-    //    }
-    //}
+    public void UpdateHealth(GameObject building)
+    {
+        buildingHealth.value = buildingHealth.value = building.GetComponent<Building>().health;
+    }
 
     public void UpdateText(GameObject building)
     {

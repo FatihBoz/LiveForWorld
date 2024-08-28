@@ -281,32 +281,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &110403472144069404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7658640159180443157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479045fdd8fed9f43a057dfdf7f2a964, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  cost: 50
-  level: 1
-  isPressed: 0
-  damage: 0
-  TurretBulletPrefab: {fileID: 6497704805086626202, guid: c735467028e6d7946813e7e175e5f337, type: 3}
-  FirePoint: {fileID: 0}
-  FirePoint2: {fileID: 0}
-  detectionRadius: 10
-  TurretHead: {fileID: 7658640159696094579}
-  TurretHeadAnimator: {fileID: 277197143}
-  fireRate: 1
-  turretShootFx: {fileID: 0}
 --- !u!82 &-65601091156970692
 AudioSource:
   m_ObjectHideFlags: 0
@@ -403,3 +377,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &110403472144069404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7658640159180443157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479045fdd8fed9f43a057dfdf7f2a964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  cost: 50
+  level: 1
+  isPressed: 0
+  damage: 0
+  TurretBulletPrefab: {fileID: 6497704805086626202, guid: c735467028e6d7946813e7e175e5f337, type: 3}
+  FirePoint: {fileID: 3728124400906799611}
+  FirePoint2: {fileID: 6497002252691597178}
+  detectionRadius: 10
+  TurretHead: {fileID: 7658640159696094579}
+  TurretHeadAnimator: {fileID: 277197143}
+  fireRate: 1
+  turretShootFx: {fileID: 8300000, guid: b3b4a6f221bce0948a22850e8dce6ce0, type: 3}
