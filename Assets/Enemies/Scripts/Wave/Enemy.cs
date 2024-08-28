@@ -184,7 +184,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void OnDrawGizmos()
     {
-        Gizmos.color=Color.yellow;
-        Gizmos.DrawWireSphere(transform.position,detectionRange);
+      //  Gizmos.color=Color.yellow;
+      //  Gizmos.DrawWireSphere(transform.position,detectionRange);
     }
 }
