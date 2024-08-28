@@ -329,8 +329,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[2]
-      value: 9999
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1049920960}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: phaseCooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
@@ -4827,6 +4831,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1049920960 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7072444061591351794, guid: 910177ec26b76c14996c2d53627a6def, type: 3}
+  m_PrefabInstance: {fileID: 155353844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1088122498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7023430931952657397, guid: 482d60a3abe35784f9ff63ca0f4819f2, type: 3}
