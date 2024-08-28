@@ -12,9 +12,16 @@ public class CinematicManager : MonoBehaviour
     public TextMeshProUGUI text;
     public GameObject[] Panels;
 
+    private static bool startCinematic;
     void Start()
     {
-        StartCoroutine(PlayCinematic());
+
+        if (!startCinematic)
+        {
+            StartCoroutine(PlayCinematic());
+            startCinematic = true;
+        }
+
     }
 
     private IEnumerator PlayCinematic()
@@ -66,5 +73,20 @@ public class CinematicManager : MonoBehaviour
         text.text = subtitle.GetTitle();
     }
 
-    
+    private void OnEnable()
+    {
+        WaveSpawn.Wave5CountdownEnded += Cinematic_Wave5Ended;
+    }
+
+    private void Cinematic_Wave5Ended()
+    {
+        StartCoroutine(PlayCinematic());
+    }
+
+    private void OnDisable()
+    {
+        WaveSpawn.Wave5CountdownEnded -= Cinematic_Wave5Ended;
+    }
+
+
 }
