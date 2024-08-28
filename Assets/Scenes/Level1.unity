@@ -325,40 +325,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 600193620}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: phaseCooldown
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: setWaveCooldown
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: pos.Array.data[0].y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: pos.Array.data[1].y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: pos.Array.data[2].y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: pos.Array.data[3].y
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: WaveInfos.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: WaveInfos.Array.data[0].SetWaveCooldown
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: WaveInfos.Array.data[0].SetWaveQuantity
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[2].SetWaveCooldown
@@ -367,10 +335,6 @@ PrefabInstance:
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[2].SetWaveQuantity
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: WaveInfos.Array.data[0].NormalWaveQuantity
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[2].CircleWaveCooldown
@@ -394,19 +358,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[0]
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[2]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
-      propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[3]
+      propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[2]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[3]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[2].enemyRates.Array.data[0]
@@ -2141,6 +2105,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f392814e5dcb6a45b0380e07be63338, type: 3}
+--- !u!1 &427996160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 427996161}
+  m_Layer: 0
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &427996161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427996160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 60.2, y: 0, z: -9.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &428289401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446987716, guid: a01382f4fef9dda44bfc417604e578b8, type: 3}
@@ -4376,12 +4371,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
