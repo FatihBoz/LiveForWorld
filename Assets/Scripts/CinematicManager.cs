@@ -9,6 +9,7 @@ using System;
 public class CinematicManager : MonoBehaviour
 {
     public static Action OnCinematicFinished;
+    public static Action OnEndingCinematicFinished;
     public GameObject CinematicObject;
     public TextMeshProUGUI text;
     public GameObject[] Panels;
@@ -56,6 +57,7 @@ public class CinematicManager : MonoBehaviour
 
             if(playerCounter == Panels.Length - 1)
             {
+                OnCinematicFinished?.Invoke();
                 OnCinematicFinished?.Invoke();
             }
     

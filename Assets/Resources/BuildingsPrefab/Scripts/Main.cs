@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 public class Main : Building
 {
     public Slider healthBar;
+    public static Action OnSpaceshipCollapsed;
     public void Start()
     {
         health=maxHealth;
@@ -16,6 +18,10 @@ public class Main : Building
     {
         base.ChangeHealth(health);
         healthBar.value=this.health;
+        if (health <= 0)
+        {
+            OnSpaceshipCollapsed?.Invoke();
+        }
     }
     public override void UpgradeBuilding()
     {
