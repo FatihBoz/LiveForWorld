@@ -84,6 +84,7 @@ public class PlayerProperties : MonoBehaviour
         if(playerHealth<=0)
         {
             Debug.Log(playerHealth);
+            OnPlayerDeath?.Invoke();
         }
         return playerHealth;
     }
