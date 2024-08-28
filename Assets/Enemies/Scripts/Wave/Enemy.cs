@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     {
         astarAI= GetComponent<AstarAI>();
         chController= GetComponent<CharacterController>();
-    //    agent = GetComponent<NavMeshAgent>();
+    //  agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         audioSource= GetComponent<AudioSource>();
         currentHp = maxHp;
