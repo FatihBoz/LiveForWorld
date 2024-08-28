@@ -39,6 +39,8 @@ public abstract class Building : MonoBehaviour
         int missingHealth = maxHealth - health;
         PlayerProperties.Instance.ChangeOreAmount(-missingHealth);
         health += missingHealth;
+
+        BuildingInfo.Instance.UpdateHealth(this.gameObject);
     }
 
     private void Update()

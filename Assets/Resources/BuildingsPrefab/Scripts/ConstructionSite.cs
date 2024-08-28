@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstructionSite : MonoBehaviour
+public class ConstructionSite : Building
 {
-    bool isPressed = false;
-
-
     public GameObject buildingPrefab;
 
 
-    //public GameObject BuildUI;
+
+    public override void UpgradeBuilding()
+    {
+        throw new NotImplementedException();
+    }
 
     private void Start()
     {
@@ -27,27 +28,6 @@ public class ConstructionSite : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Valla player tespit ettim");
-            isPressed = true;
-            //BuildUI.SetActive(true);
-
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Valla player tespit ettim");
-            isPressed = false;
-            //BuildUI.SetActive(true);
-
-        }
-    }
 
     //UnityEngine.InputSystem.InputAction.CallbackContext obj
     private void ActivateBuilding()
