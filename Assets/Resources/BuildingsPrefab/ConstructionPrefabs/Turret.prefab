@@ -11,9 +11,33 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8828ee5825971240a8cf4c07fd9e1df, type: 2}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3665525
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Size.y
+      value: 4.1625824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Size.z
+      value: 1.2955222
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0064280294
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Center.y
+      value: 1.5812914
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249450276513115516, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.007109036
+      objectReference: {fileID: 0}
     - target: {fileID: 6879264094550411168, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_Name
-      value: ConstructionSite (3)
+      value: Turret (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_RootOrder
@@ -21,15 +45,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 111.94596
+      value: 1.0724878
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 149.42
+      value: 1.6149883
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.23
+      value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}
       propertyPath: m_LocalRotation.w

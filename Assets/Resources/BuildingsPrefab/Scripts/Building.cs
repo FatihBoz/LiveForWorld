@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public abstract class Building : MonoBehaviour
@@ -15,8 +13,18 @@ public abstract class Building : MonoBehaviour
 
     public bool isPressed;
 
+    private bool firstChange;
+
+    public static Action OnBuildingHealthChanged;
     public virtual void ChangeHealth(int health)
     { 
+        if(!firstChange)
+        {
+            firstChange = true;
+            OnBuildingHealthChanged?.Invoke();
+        }
+
+
         this.health -= health;
         BuildingInfo.Instance.UpdateHealth(this.gameObject);
         if (this.health<=0)
@@ -46,7 +54,6 @@ public abstract class Building : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Valla player tespit ettim");
             isPressed = true;
 
             BuildingInfo.Instance.gameObject.SetActive(true);
@@ -61,7 +68,6 @@ public abstract class Building : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Valla player ��kt�");
             isPressed = false;
             BuildingInfo.Instance.gameObject.SetActive(false);
 

@@ -4,12 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
     public List<TextMeshProUGUI> ButtonTexts;
     public GameObject ButtonPanel;
     public GameObject BackgroundImage;
+    public Image EndingPanel;
 
     private void OnEnable()
     {
@@ -33,8 +35,15 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        print("girdi");
-        SceneManager.LoadScene(sceneName);      
+        EndingPanel.gameObject.SetActive(true);
+        EndingPanel.DOFade(1f, 1f);
+        StartCoroutine(WaitToFade(sceneName));
+    }
+
+    private IEnumerator WaitToFade(string name)
+    {
+        yield return new WaitForSeconds(1.1f);
+        SceneManager.LoadScene(name);
     }
 
 }

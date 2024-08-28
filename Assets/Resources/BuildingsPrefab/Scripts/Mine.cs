@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Mine : Building
+public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
 {
     private float productionTimer = 0f;
 
@@ -13,7 +13,7 @@ public class Mine : Building
         if(level == 1)
         {
 
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 3, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y+0.1f, this.transform.position.z);
 
             // Mevcut GameObject'in rotasyonunu güncelle
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
