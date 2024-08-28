@@ -15,7 +15,7 @@ public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
 
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y+3f, this.transform.position.z);
 
-            // Mevcut GameObject'in rotasyonunu güncelle
+            // Mevcut GameObject'in rotasyonunu gï¿½ncelle
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
 
         }
@@ -26,14 +26,14 @@ public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
     // Update is called once per frame
     void Update()
     {
-        // Zamanlayýcýyý güncelle
+        // Zamanlayï¿½cï¿½yï¿½ gï¿½ncelle
         productionTimer += Time.deltaTime;
 
-        // Zamanlayýcý belirlenen aralýða ulaþtýysa üretimi gerçekleþtir
-        if (productionTimer >= level)
+        // Zamanlayï¿½cï¿½ belirlenen aralï¿½ï¿½a ulaï¿½tï¿½ysa ï¿½retimi gerï¿½ekleï¿½tir
+        if (productionTimer >= level && health>0)
         {
             ProduceResource();
-            productionTimer = 0f; // Zamanlayýcýyý sýfýrla
+            productionTimer = 0f; // Zamanlayï¿½cï¿½yï¿½ sï¿½fï¿½rla
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && isPressed)
@@ -44,8 +44,8 @@ public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
    
     void ProduceResource()
     {
-        // Her üretimde oyuncu kaynaklarýný artýr
-        PlayerProperties.Instance.ChangeOreAmount(level); // Saniyede 1 artýr
+        // Her ï¿½retimde oyuncu kaynaklarï¿½nï¿½ artï¿½r
+        PlayerProperties.Instance.ChangeOreAmount(level); // Saniyede 1 artï¿½r
     }
 
     public override void UpgradeBuilding()

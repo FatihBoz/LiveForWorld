@@ -67,6 +67,39 @@ MonoBehaviour:
     - 2
     - 1
     - 4
+  - SetWaveQuantity: 3
+    SetWaveCooldown: 45
+    CircleWaveQuantity: 0
+    CircleWaveCooldown: 50
+    NormalWaveQuantity: 30
+    NormalWaveCooldown: 2
+    enemyRates:
+    - 6
+    - 2
+    - 1
+    - 4
+  - SetWaveQuantity: 4
+    SetWaveCooldown: 60
+    CircleWaveQuantity: 0
+    CircleWaveCooldown: 50
+    NormalWaveQuantity: 40
+    NormalWaveCooldown: 2
+    enemyRates:
+    - 6
+    - 2
+    - 3
+    - 4
+  - SetWaveQuantity: 4
+    SetWaveCooldown: 60
+    CircleWaveQuantity: 0
+    CircleWaveCooldown: 50
+    NormalWaveQuantity: 40
+    NormalWaveCooldown: 2
+    enemyRates:
+    - 6
+    - 2
+    - 1
+    - 4
   phaseCooldown: 20
   player: {fileID: 0}
   prefabs:
@@ -80,5 +113,4 @@ MonoBehaviour:
   - {x: -7.7, y: 10, z: -49.4}
   - {x: -0.9, y: 10, z: 33.1}
   - {x: 60.2, y: 10, z: -9.4}
-  setWaveCooldown: 10
   wave5Cooldown: 90
