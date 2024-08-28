@@ -24,8 +24,10 @@ public class Mine : Building //TODO: LEVEL ATLAYINCA DAHA FAZLA PARA VER
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
+        
         // Zamanlay�c�y� g�ncelle
         productionTimer += Time.deltaTime;
 
