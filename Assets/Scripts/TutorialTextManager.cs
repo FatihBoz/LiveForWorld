@@ -21,4 +21,7 @@ public class TutorialTextManager : MonoBehaviour
 
     [Header("YAPI ONARIMI")]
     [TextArea] public string BuildingRepairText;
+
+    [Header("DAYAN GELÝYORUZ")]
+    [TextArea] public string DefendUntilTheyArrive;
 }

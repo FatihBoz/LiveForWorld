@@ -46,6 +46,7 @@ public class TutorialManager : MonoBehaviour
     private void OnEnable()
     {
         Building.OnBuildingHealthChanged += Tutorial_OnBuildingHealthChanged;
+       
     }
 
     private void Tutorial_OnBuildingHealthChanged()
