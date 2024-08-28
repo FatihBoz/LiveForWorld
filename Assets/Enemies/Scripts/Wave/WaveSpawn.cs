@@ -1,10 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WaveSpawn : MonoBehaviour
 {
     public static WaveSpawn Instance { get; private set; }
+
+
+    public WavesByPhase[] WaveInfos;
+    private int currentPhase;
+    public float phaseCooldown=30f;
+    private float phaseTime;
     private int waveObjCount;
     public Transform player;
     public Enemy[] prefabs;
@@ -20,6 +28,8 @@ public class WaveSpawn : MonoBehaviour
 
     public float setWaveCooldown=2;
     private float setWaveTime;
+
+    private bool phaseFinished;
     private void Awake() 
     { 
         if (Instance != null && Instance != this) 
@@ -35,14 +45,18 @@ public class WaveSpawn : MonoBehaviour
     }
     void Start()
     {
-
+        phaseFinished=false;
+        phaseTime=Time.time;
+        currentPhase=-1;
         // CircleWave circleWave = new CircleWave(player,prefabs[0],spawnCount,distance);
         // waveObjCount=circleWave.Spawn().Count;
 
-
         setWaveTime=Time.time;
-        
         circleSpawnedTime=Time.time;
+        spawnTime=Time.time;
+
+
+
          randomCircleSpawnTime=Random.Range(10f,20f);
 /*         for (int i = 0; i < spawnCount; i++)
         {
@@ -58,41 +72,71 @@ public class WaveSpawn : MonoBehaviour
 
     public void Update()
     {
-            if (Time.time>=spawnCooldown+spawnTime)
+            if (!phaseFinished && CheckAllWavesCleanInPhase())
             {
-                spawnTime=Time.time;
-                Vector3 v3Pos = pos[Random.Range(0,pos.Length)];
-                //v3Pos.y=1f;
-                Enemy spawnedObject = Instantiate(prefabs[Random.Range(0,prefabs.Length)]);
-               // spawnedObject.SetTarget(player);
-                spawnedObject.transform.position= v3Pos;
-                waveObjCount++;
+                phaseFinished=true;
+                phaseTime=Time.time;
             }
 
-            if (Time.time>=circleSpawnedTime+randomCircleSpawnTime)
+            if (Time.time>=phaseCooldown+phaseTime && phaseFinished)
             {
-                circleSpawnedTime=Time.time;
-                randomCircleSpawnTime=Random.Range(20f,30f);
-                int inGameSpawnCount = Random.Range(spawnCount,30);
-                CircleWave circleWave1 = new CircleWave(player,prefabs[0],inGameSpawnCount,distance);
-                CircleWave circleWave2 = new CircleWave(player,prefabs[3],inGameSpawnCount,distance, (Mathf.PI/inGameSpawnCount));
-                circleWave1.Spawn();
-                circleWave2.Spawn();
+                // start
+                currentPhase++;
+                if (WaveInfos.Length>currentPhase)
+                {
+                    SetEnemyRates();
+                }
+                phaseFinished=false;
             }
 
-            if (Time.time>=setWaveTime+setWaveCooldown)
+            if (currentPhase>=0 && WaveInfos.Length>currentPhase)
             {
-                setWaveTime=Time.time;
-                int rowCount=Random.Range(4,6);
-                SetWave setWave = new SetWave(
-                    player,
-                    prefabs[Random.Range(0,prefabs.Length)],
-                    rowCount*5,
-                    rowCount,
-                    pos[Random.Range(0,pos.Length)]
-                    );    
-                setWave.Spawn();
-                
+              
+                if (Time.time>=spawnTime+ WaveInfos[currentPhase].NormalWaveCooldown
+                && WaveInfos[currentPhase].NormalWaveQuantity>0)
+                {
+                    spawnTime=Time.time;
+
+                    Vector3 v3Pos = pos[Random.Range(0,pos.Length)];
+
+                    Enemy spawnedObject = Instantiate(SelectEnemyByRatesInPhase());
+
+                    spawnedObject.transform.position= v3Pos;
+
+                    WaveInfos[currentPhase].NormalWaveQuantity--;
+                }
+
+                if (Time.time>=circleSpawnedTime+WaveInfos[currentPhase].CircleWaveCooldown
+                && WaveInfos[currentPhase].CircleWaveQuantity>0)
+                {
+                    circleSpawnedTime=Time.time;
+                    int inGameSpawnCount = Random.Range(spawnCount,30);
+
+                    CircleWave circleWave1 = new CircleWave(player,SelectEnemyByRatesInPhase(),inGameSpawnCount,distance);
+                    CircleWave circleWave2 = new CircleWave(player,SelectEnemyByRatesInPhase(),inGameSpawnCount,distance, (Mathf.PI/inGameSpawnCount));
+                    circleWave1.Spawn();
+                    circleWave2.Spawn();
+                    
+                    WaveInfos[currentPhase].CircleWaveQuantity--;
+                }
+
+                if (Time.time>=setWaveTime+WaveInfos[currentPhase].SetWaveCooldown
+                && WaveInfos[currentPhase].SetWaveQuantity>0)
+                {
+                    setWaveTime=Time.time;
+                    int rowCount=Random.Range(4,6);
+                    SetWave setWave = new SetWave(
+                        player,
+                        SelectEnemyByRatesInPhase(),
+                        rowCount*5,
+                        rowCount,
+                        pos[Random.Range(0,pos.Length)]
+                        );    
+                    setWave.Spawn();
+                    WaveInfos[currentPhase].SetWaveQuantity--;
+                    
+                }
+              
             }
             
     }
@@ -100,4 +144,61 @@ public class WaveSpawn : MonoBehaviour
     {
         waveObjCount--;
     }
+    private bool CheckAllWavesCleanInPhase()
+    {
+        return currentPhase<0||(WaveInfos[currentPhase].CircleWaveQuantity<=0 
+        && WaveInfos[currentPhase].SetWaveQuantity<=0
+        && WaveInfos[currentPhase].NormalWaveQuantity<=0);
+    }
+    private void SetEnemyRates()
+    {
+  
+        float sum=0;
+        for (int i = 0; i < WaveInfos[currentPhase].enemyRates.Length; i++)
+        {
+            sum+=WaveInfos[currentPhase].enemyRates[i];
+        }
+
+        for (int i = 0; i < WaveInfos[currentPhase].enemyRates.Length; i++)
+        {
+        
+           WaveInfos[currentPhase].enemyRates[i]/=sum;
+           if (i>0)
+           {
+            WaveInfos[currentPhase].enemyRates[i]+=WaveInfos[currentPhase].enemyRates[i-1];
+           }
+
+        }
+    }
+    private Enemy SelectEnemyByRatesInPhase()
+    {
+        float randomVal=Random.Range(0.001f,1f);
+
+        for (int i = 0; i < WaveInfos[currentPhase].enemyRates.Length; i++)
+        {
+           if (randomVal<=WaveInfos[currentPhase].enemyRates[i])
+           {
+                return prefabs[i];
+           }
+        }
+
+
+
+        return prefabs[0];
+
+    }
+
+}
+
+[Serializable]
+public class WavesByPhase
+{
+    public int SetWaveQuantity;
+    public float SetWaveCooldown;
+    public int CircleWaveQuantity;
+    public float CircleWaveCooldown;
+    public int NormalWaveQuantity;
+    public float NormalWaveCooldown;
+
+    public float[] enemyRates;
 }

@@ -110,7 +110,7 @@ MonoBehaviour:
     m_Bits: 128
   maxHp: 30
   attackCooldown: 2
-  detectionRange: 134.3
+  detectionRange: 400
   timeBetweenPathUpdates: 0.5
   attackRange: 2.5
   attackDamage: 5
