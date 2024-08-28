@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     protected AstarAI astarAI;
 
     private CharacterController chController;
+
     private void Awake()
     {
         astarAI= GetComponent<AstarAI>();
@@ -161,12 +162,15 @@ public class Enemy : MonoBehaviour
         {
 
             isAlive=false;
+            if (!isAlive)
+            {
+                PlayerProperties.Instance.IncreaseMobBloodCount(mobBloodFactor);
+            }
             WaveSpawn.Instance.DecreaseWaveObjCount();
             //Die Animation
             astarAI.SetRunning(false);
           //  agent.isStopped=true;
             Destroy(GetComponent<Collider>());
-            PlayerProperties.Instance.IncreaseMobBloodCount(mobBloodFactor);
             animator.SetTrigger("Die");
         }
     }
