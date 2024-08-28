@@ -18,9 +18,25 @@ public abstract class Building : MonoBehaviour
     public virtual void ChangeHealth(int health)
     { 
         this.health -= health;
+        BuildingInfo.Instance.UpdateHealth(this.gameObject);
         if (this.health<=0)
         {
             this.health=0;
+        }
+    }
+
+    public void RepairBuilding()
+    {
+        int missingHealth = maxHealth - health;
+        PlayerProperties.Instance.ChangeOreAmount(-missingHealth);
+        health += missingHealth;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && isPressed)
+        {
+            RepairBuilding();
         }
     }
 
@@ -32,8 +48,10 @@ public abstract class Building : MonoBehaviour
         {
             Debug.Log("Valla player tespit ettim");
             isPressed = true;
-            BuildingInfo.Instance.UpdateText(this.gameObject);
+
             BuildingInfo.Instance.gameObject.SetActive(true);
+            BuildingInfo.Instance.AssignHealth(this.gameObject);
+            BuildingInfo.Instance.UpdateText(this.gameObject);
 
         }
     }

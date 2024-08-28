@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: vagonlv3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afb98d7c83f9e9149bacd09f3c7a1411, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afb98d7c83f9e9149bacd09f3c7a1411, type: 3}
 --- !u!1 &6827251608603187852 stripped
@@ -161,6 +165,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineLvl3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d52e7c581f17db42865ee9d5755a0ab, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d52e7c581f17db42865ee9d5755a0ab, type: 3}
+      propertyPath: m_TagString
+      value: Mine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d52e7c581f17db42865ee9d5755a0ab, type: 3}
 --- !u!4 &6193739792580070992 stripped
@@ -173,6 +185,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d52e7c581f17db42865ee9d5755a0ab, type: 3}
   m_PrefabInstance: {fileID: 5944238018906991035}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &4502179634035183608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6827251607300707562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0632, y: 0.07784775, z: 0.09249998}
+  m_Center: {x: 0.008399999, y: 0.011076115, z: -0.0022500004}
 --- !u!114 &1279218912724597995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,16 +215,3 @@ MonoBehaviour:
   cost: 10
   level: 1
   isPressed: 0
---- !u!65 &4502179634035183608
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6827251607300707562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0632, y: 0.07784775, z: 0.09249998}
-  m_Center: {x: 0.008399999, y: 0.011076115, z: -0.0022500004}
