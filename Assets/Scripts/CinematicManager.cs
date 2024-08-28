@@ -19,7 +19,6 @@ public class CinematicManager : MonoBehaviour
 
         if (!startCinematic)
         {
-            CinematicObject.SetActive(true);
             StartCoroutine(PlayCinematic());
             startCinematic = true;
         }
