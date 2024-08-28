@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Turret : Building
 {
-    public float damage;
-
     public GameObject TurretBulletPrefab;
 
     public Transform FirePoint;
@@ -23,7 +21,7 @@ public class Turret : Building
 
     private float fireCountdown = 0f; 
     public float fireRate = 1f;
-    float bulletDamage = 10;
+    public float bulletDamage = 10;
 
     [Header("SOUND EFFECT")]
     private AudioSource audioSource;
@@ -54,7 +52,7 @@ public class Turret : Building
 
             maxHealth += 50;
 
-            damage += 50;
+            bulletDamage += 50;
 
             Debug.Log("Maden seviyesi y�kseltildi! Yeni seviye: " + level);
 
@@ -145,7 +143,7 @@ public class Turret : Building
         // Hedefin y�n�n� hesapla
         Vector3 direction = currentTarget.transform.position - TurretHead.transform.position;
         // Yaln�zca Y ekseni �zerinde d�nd�rmek i�in Y d�zlemine projekte et
-
+        print("direction : " + direction);
         if (direction.sqrMagnitude == 0f)
         {
             Debug.LogWarning("Target is exactly at the same position as the turret head.");
@@ -186,23 +184,4 @@ public class Turret : Building
     }
 
 
-
-    /*
-    public override void AttackAnimationEvent()
-    {
-        StartCoroutine(WaitForAttack());
-        Vector3 direction = target.position - transform.position;
-        direction.y = 0;
-        direction.Normalize();
-        Instantiate(bulletPrefab, ShootPoint.position, Quaternion.LookRotation(direction));
-    }
-
-
-    private IEnumerator WaitForAttack()
-    {
-        agent.isStopped = true;
-        yield return new WaitForSeconds(1);
-        agent.isStopped = false;
-    }
-    */
 }
