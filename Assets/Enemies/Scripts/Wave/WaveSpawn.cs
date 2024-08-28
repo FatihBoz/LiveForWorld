@@ -75,6 +75,7 @@ public class WaveSpawn : MonoBehaviour
             if (!phaseFinished && CheckAllWavesCleanInPhase())
             {
                 phaseFinished=true;
+                Debug.Log("bu faz bıtmıştır");
                 phaseTime=Time.time;
             }
 
@@ -87,9 +88,13 @@ public class WaveSpawn : MonoBehaviour
                     SetEnemyRates();
                 }
                 phaseFinished=false;
+                
+                setWaveTime=Time.time;
+                circleSpawnedTime=Time.time;
+                spawnTime=Time.time;
             }
 
-            if (currentPhase>=0 && WaveInfos.Length>currentPhase)
+            if (currentPhase>=0 && WaveInfos.Length>currentPhase && !phaseFinished)
             {
               
                 if (Time.time>=spawnTime+ WaveInfos[currentPhase].NormalWaveCooldown

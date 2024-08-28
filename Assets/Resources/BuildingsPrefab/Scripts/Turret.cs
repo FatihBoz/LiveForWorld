@@ -105,7 +105,9 @@ public class Turret : Building
         float distanceVal= distanceBetweenPlayer.magnitude;
         if (Input.GetKeyDown(KeyCode.R) && distanceVal<=4)
         {
-            Debug.Log("repaired");    
+            int missingHealth = maxHealth-health;
+            PlayerProperties.Instance.ChangeOreAmount(-missingHealth);
+            health+=missingHealth; 
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && distanceVal<=4)

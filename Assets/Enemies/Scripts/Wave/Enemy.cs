@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
 
         if (target != null) 
         {
-            RotateTowardsPlayer(target.transform);
+            RotateTowardsPlayer(target);
             CalculateDistanceAndAttack();
         }
 
@@ -84,11 +84,24 @@ public class Enemy : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRange,focusLayerMask);
 
-
+        Transform nearestTarget=null;
+        float distance = Mathf.Infinity;
         foreach (Collider collider in hitColliders)
-        {
-                target = collider.transform;
+        {   
+                Vector3 distanceVec=collider.transform.position-transform.position;
+                distanceVec.y=0;
+                float distanceR=distanceVec.sqrMagnitude;
+                if (distanceR<=distance)
+                {
+                    distance=distanceR;
+                    nearestTarget=collider.transform;
+                }
                // agent.SetDestination(target.position);
+        }
+
+        if (nearestTarget!=null)
+        {
+            target = nearestTarget;
         }
     }
 
@@ -167,5 +180,11 @@ public class Enemy : MonoBehaviour
     public GameObject GetBloodEffect()
     {
         return bloodEffect;
+    }
+
+    public virtual void OnDrawGizmos()
+    {
+      //  Gizmos.color=Color.yellow;
+      //  Gizmos.DrawWireSphere(transform.position,detectionRange);
     }
 }

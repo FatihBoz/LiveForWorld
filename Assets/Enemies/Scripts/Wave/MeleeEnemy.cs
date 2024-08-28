@@ -34,8 +34,9 @@ public class MeleeEnemy : Enemy
 
     }
 
-    public void OnDrawGizmos()
+    public override void OnDrawGizmos()
     {
+        base.OnDrawGizmos();
         Gizmos.color= Color.red;
         Gizmos.DrawWireSphere(attackPoint.position,attackRangeForSphere);
     }
