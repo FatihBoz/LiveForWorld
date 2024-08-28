@@ -8,7 +8,7 @@ public class OurProjectile : Projectile
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if(collision.gameObject.TryGetComponent<Enemy>(out var enemy))
+            if(collision.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
             {
                 ContactPoint contact = collision.contacts[0];
                 Vector3 hitPoint = contact.point;

@@ -163,7 +163,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         currentHp -= damageAmount;
-        audioSource.PlayOneShot(getHitSoundFx);
         if(currentHp <= 0)
         {
             if (isAlive)
