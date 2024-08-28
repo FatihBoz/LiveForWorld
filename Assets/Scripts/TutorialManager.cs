@@ -1,19 +1,21 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
     public float WaitingTimeBetweenSpeeches;
+    public Image StartingPanel;
     public TextMeshProUGUI subtitle;
     public GameObject panel;
 
     void Start()
     {
-
-        StartCoroutine(StartTutorial());
+        StartCoroutine(WaitForStartingScene());
+        
     }
 
     private IEnumerator WaitSpeechToEnd(string text)
@@ -31,6 +33,14 @@ public class TutorialManager : MonoBehaviour
         StartCoroutine(WaitSpeechToEnd(TutorialTextManager.Instance.StartingText2));
         yield return new WaitForSeconds(WaitingTimeBetweenSpeeches+2);
         StartCoroutine(WaitSpeechToEnd(TutorialTextManager.Instance.StartingText3));
+    }
+
+    private IEnumerator WaitForStartingScene()
+    {
+        StartingPanel.DOFade(0f, 1f);
+        yield return new WaitForSeconds(2f);
+        StartingPanel.gameObject.SetActive(false);
+        StartCoroutine(StartTutorial());
     }
 
     private void OnEnable()

@@ -64,8 +64,7 @@ public class PlayerProperties : MonoBehaviour
     }
     public void Update()
     {
-            playerMat.color=Color.Lerp(playerMat.color,Color.white,Time.deltaTime*5);
-
+        playerMat.color=Color.Lerp(playerMat.color,Color.white,Time.deltaTime*5);
     }
     public float getOre()
     {
