@@ -278,8 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479045fdd8fed9f43a057dfdf7f2a964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
-  maxHealth: 75
+  health: 125
+  maxHealth: 125
   cost: 50
   level: 1
   isPressed: 0
