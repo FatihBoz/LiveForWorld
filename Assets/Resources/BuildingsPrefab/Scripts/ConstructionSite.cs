@@ -20,7 +20,7 @@ public class ConstructionSite : Building
         //BuildUI.SetActive(false);
     }
 
-    private void Update()
+    public override void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && isPressed)
         {
