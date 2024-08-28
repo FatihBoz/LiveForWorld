@@ -6,24 +6,50 @@ public class Turbine : Building
 {
 
     public float knockbackForce = 5f; // Knockback kuvveti
-    public int damageAmount = 10; // Verilecek hasar miktarý
+    public int damageAmount = 10; // Verilecek hasar miktarï¿½
 
     void OnTriggerEnter(UnityEngine.Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Düþman türbine yakalandý ");
+            Debug.Log("Dï¿½ï¿½man tï¿½rbine yakalandï¿½ ");
             // Knockback etkisi uygula
             Rigidbody enemyRb = other.gameObject.GetComponent<Rigidbody>();
+            CharacterController chController =other.GetComponent<CharacterController>();
+
             if (enemyRb != null)
             {
+                Debug.Log("firlattim");
                 Vector3 knockbackDirection = other.transform.position - transform.position;
-                knockbackDirection.y = 0; // Y eksenindeki hareketi sýnýrlandýrarak yere yapýþmayý engeller
+                knockbackDirection.y = 0; // Y eksenindeki hareketi sï¿½nï¿½rlandï¿½rarak yere yapï¿½ï¿½mayï¿½ engeller
                 enemyRb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode.Impulse);
+                chController.SimpleMove(knockbackDirection.normalized * knockbackForce);
             }
-
-            //other.gameObject.GetComponent<Enemy>().TakeDamage(damageAmount);
+            other.gameObject.GetComponent<Enemy>().TakeDamage(damageAmount);
             // Hasar uygula
+        }
+    }
+
+     void OnTriggerStay(UnityEngine.Collider other)
+    {
+          if (other.gameObject.CompareTag("Player"))
+        {
+            isPressed = true;
+
+            BuildingInfo.Instance.gameObject.SetActive(true);
+            BuildingInfo.Instance.AssignHealth(this.gameObject);
+            BuildingInfo.Instance.UpdateText(this.gameObject);
+
+        }
+    }
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPressed = false;
+            BuildingInfo.Instance.gameObject.SetActive(false);
+
+
         }
     }
 
@@ -39,7 +65,7 @@ public class Turbine : Building
 
             damageAmount += 10;
 
-            Debug.Log("Mayýn seviyesi yükseltildi! Yeni seviye: " + level);
+            Debug.Log("Mayï¿½n seviyesi yï¿½kseltildi! Yeni seviye: " + level);
         }
         else
         {
@@ -47,8 +73,10 @@ public class Turbine : Building
         }
     }
 
-    private void Update()
+    public override void Update()
     {
+        base.Update();
+
         if (Input.GetKeyDown(KeyCode.Q) && isPressed)
         {
             UpgradeBuilding();
