@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public float mobBloodFactor=1f;
     public LayerMask focusLayerMask;
     [SerializeField] private float maxHp;
     [SerializeField] private float attackCooldown = 2f;
@@ -152,6 +153,7 @@ public class Enemy : MonoBehaviour
             astarAI.SetRunning(false);
           //  agent.isStopped=true;
             Destroy(GetComponent<Collider>());
+            PlayerProperties.Instance.IncreaseMobBloodCount(mobBloodFactor);
             animator.SetTrigger("Die");
         }
     }

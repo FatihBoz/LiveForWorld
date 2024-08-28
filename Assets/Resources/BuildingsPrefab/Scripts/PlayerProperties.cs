@@ -15,21 +15,27 @@ public class PlayerProperties : MonoBehaviour
     public static PlayerProperties Instance;
 
     public TextMeshProUGUI OreText;
+    public TMP_Text mobBloodText;
     private AudioSource audioSource;
     public AudioClip onHitSoundFx;
     public Image damageImageUI;
     public Material playerMat;
     public Slider healthBar;
-    private bool redded;
-
+    private float mobBloodCount;
     private void Start()
     {
-        redded=false;
         audioSource=GetComponent<AudioSource>();
         UpdateText();
         healthBar.maxValue=playerHealth;
         healthBar.value=playerHealth;
-
+        mobBloodCount=0;
+        mobBloodText.text=mobBloodCount.ToString();
+    }
+    public float IncreaseMobBloodCount(float value)
+    {
+        mobBloodCount+=value;
+        mobBloodText.text=mobBloodCount.ToString();
+        return mobBloodCount;
     }
 
     private void Awake()
