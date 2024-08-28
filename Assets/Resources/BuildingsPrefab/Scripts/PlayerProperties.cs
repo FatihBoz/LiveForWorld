@@ -18,7 +18,7 @@ public class PlayerProperties : MonoBehaviour
     public TMP_Text mobBloodText;
     private AudioSource audioSource;
     public AudioClip onHitSoundFx;
-    public Image damageImageUI;
+    public GameObject damageImageUI;
     public Material playerMat;
     public Slider healthBar;
     private float mobBloodCount;
