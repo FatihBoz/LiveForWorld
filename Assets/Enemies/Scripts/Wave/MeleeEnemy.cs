@@ -10,12 +10,16 @@ public class MeleeEnemy : Enemy
   public override void AttackAnimationEvent()
     {
         StartCoroutine(WaitForAttack());
-        Collider[] hitColliders = Physics.OverlapSphere(attackPoint.position, attackRangeForSphere);
+        Collider[] hitColliders = Physics.OverlapSphere(attackPoint.position, attackRangeForSphere,focusLayerMask);
          foreach (Collider collider in hitColliders)
         {
             if (collider.CompareTag("Player"))
             {
                PlayerProperties.Instance.DecreasePlayerHealth(attackDamage);
+            }
+            else
+            {
+                collider.GetComponent<Building>().ChangeHealth((int)attackDamage);
             }
         }
     }
