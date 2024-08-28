@@ -46,7 +46,12 @@ public class TutorialManager : MonoBehaviour
     private void OnEnable()
     {
         Building.OnBuildingHealthChanged += Tutorial_OnBuildingHealthChanged;
-       
+        WaveSpawn.OnLastWaveSpawned += Tutorial_OnLastWaveSpawned;
+    }
+
+    private void Tutorial_OnLastWaveSpawned()
+    {
+        StartCoroutine(WaitSpeechToEnd(TutorialTextManager.Instance.DefendUntilTheyArrive));
     }
 
     private void Tutorial_OnBuildingHealthChanged()
@@ -57,6 +62,7 @@ public class TutorialManager : MonoBehaviour
     private void OnDisable()
     {
         Building.OnBuildingHealthChanged -= Tutorial_OnBuildingHealthChanged;
+        WaveSpawn.OnLastWaveSpawned -= Tutorial_OnLastWaveSpawned;
     }
 
 }
