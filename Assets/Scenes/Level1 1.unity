@@ -365,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[0]
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[1]
@@ -373,11 +373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[2]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[3]
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
       propertyPath: WaveInfos.Array.data[1].enemyRates.Array.data[0]
@@ -2315,6 +2315,10 @@ PrefabInstance:
       propertyPath: damageImageUI
       value: 
       objectReference: {fileID: 957355716}
+    - target: {fileID: 1069604413307216931, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1462233468}
     - target: {fileID: 1361816636247765086, guid: 4b567ee4c31541f40bbfc098e0dc2821, type: 3}
       propertyPath: m_Name
       value: SpaceShip
@@ -3877,6 +3881,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1462233468 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3113678466475389617, guid: 30b647e5381a573419c414364358b2f7, type: 3}
+  m_PrefabInstance: {fileID: 1270966862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1467392150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7024378107234071673, guid: d120b15d81a27a846912849d5b447a5c, type: 3}

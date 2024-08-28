@@ -15,9 +15,13 @@ public abstract class Building : MonoBehaviour
 
     public bool isPressed;
 
-    public void ChangeHealth(int health)
+    public virtual void ChangeHealth(int health)
     { 
         this.health -= health;
+        if (this.health<=0)
+        {
+            this.health=0;
+        }
     }
 
     public abstract void UpgradeBuilding();
@@ -39,7 +43,7 @@ public abstract class Building : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Valla player çýktý");
+            Debug.Log("Valla player ï¿½ï¿½ktï¿½");
             isPressed = false;
             BuildingInfo.Instance.gameObject.SetActive(false);
 

@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Main : MonoBehaviour
+public class Main : Building
 {
-    // Start is called before the first frame update
-    void Start()
+    public Slider healthBar;
+    public void Start()
+    {
+        health=maxHealth;
+        healthBar.maxValue=maxHealth;
+        healthBar.value=health;
+    }
+    public override void ChangeHealth(int health)
+    {
+        base.ChangeHealth(health);
+        healthBar.value=this.health;
+    }
+    public override void UpgradeBuilding()
     {
         
     }
+    private void OnCollisionStay(Collision collision)
+    {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
+    
 }
