@@ -44,6 +44,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5597956e9821ab748af3f17ca529ae52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaveInfos:
+  - SetWaveQuantity: 1
+    SetWaveCooldown: 25
+    CircleWaveQuantity: 1
+    CircleWaveCooldown: 15
+    NormalWaveQuantity: 1
+    NormalWaveCooldown: 2
+    enemyRates:
+    - 2
+    - 1
+    - 0
+    - 2
+  - SetWaveQuantity: 3
+    SetWaveCooldown: 10
+    CircleWaveQuantity: 1
+    CircleWaveCooldown: 15
+    NormalWaveQuantity: 20
+    NormalWaveCooldown: 2
+    enemyRates:
+    - 3
+    - 2
+    - 0.2
+    - 4
+  phaseCooldown: 25
   player: {fileID: 0}
   prefabs:
   - {fileID: 1720175703759513596, guid: 6be18c83797e9b14cb2dc9160b155d89, type: 3}
@@ -53,8 +77,7 @@ MonoBehaviour:
   spawnCount: 5
   distance: 20
   pos:
-  - {x: 15, y: 10, z: 15}
-  - {x: -15, y: 10, z: -15}
-  - {x: -15, y: 10, z: 15}
-  - {x: 15, y: 10, z: -15}
+  - {x: -24.9, y: 10, z: -33.1}
+  - {x: 42.55, y: 10, z: -2.9}
+  - {x: -14.3, y: 10, z: 29.9}
   setWaveCooldown: 30
