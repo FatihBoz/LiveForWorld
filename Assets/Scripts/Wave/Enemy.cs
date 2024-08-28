@@ -160,12 +160,11 @@ public class Enemy : MonoBehaviour
         audioSource.PlayOneShot(getHitSoundFx);
         if(currentHp <= 0)
         {
-
-            isAlive=false;
-            if (!isAlive)
+            if (isAlive)
             {
                 PlayerProperties.Instance.IncreaseMobBloodCount(mobBloodFactor);
             }
+            isAlive=false;
             WaveSpawn.Instance.DecreaseWaveObjCount();
             //Die Animation
             astarAI.SetRunning(false);
