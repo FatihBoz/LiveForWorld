@@ -100,12 +100,8 @@ public class Turret : Building
             fireCountdown -= Time.deltaTime;
         }
 
-        Vector3 distanceBetweenPlayer = transform.position-player.transform.position;
-        distanceBetweenPlayer.y=0;
-        float distanceVal= distanceBetweenPlayer.magnitude;
 
-
-        if (Input.GetKeyDown(KeyCode.Q) && distanceVal<=4)
+        if (Input.GetKeyDown(KeyCode.Q) && isPressed)
         {
             UpgradeBuilding();
         }
