@@ -30,6 +30,13 @@ public class WaveSpawn : MonoBehaviour
     private float setWaveTime;
 
     private bool phaseFinished;
+
+    public static Action OnLastWaveSpawned;
+    private bool lastWaver;
+    public static Action Wave5CountdownEnded;
+
+    public float wave5Cooldown;
+    private float wave5Time;
     private void Awake() 
     { 
         if (Instance != null && Instance != this) 
@@ -43,8 +50,22 @@ public class WaveSpawn : MonoBehaviour
 
 
     }
+    public void OnEnable()
+    {
+        OnLastWaveSpawned += LastWaveSpawn;
+    }
+    public void OnDisable()
+    {
+        OnLastWaveSpawned -= LastWaveSpawn;
+    }
+    void LastWaveSpawn()
+    {
+        lastWaver=true;
+        wave5Time = Time.time;
+    }
     void Start()
     {
+        lastWaver=false;
         phaseFinished=false;
         phaseTime=Time.time;
         currentPhase=-1;
@@ -72,6 +93,12 @@ public class WaveSpawn : MonoBehaviour
 
     public void Update()
     {
+            if (Time.time>=wave5Time+wave5Cooldown && lastWaver)
+            {
+                lastWaver=false;
+                Wave5CountdownEnded?.Invoke();
+            }
+
             if (!phaseFinished && CheckAllWavesCleanInPhase())
             {
                 phaseFinished=true;
@@ -83,12 +110,17 @@ public class WaveSpawn : MonoBehaviour
             {
                 // start
                 currentPhase++;
+                
                 if (WaveInfos.Length>currentPhase)
                 {
                     SetEnemyRates();
                 }
                 phaseFinished=false;
                 
+                if (currentPhase==4)
+                {
+                    OnLastWaveSpawned?.Invoke();
+                }
                 setWaveTime=Time.time;
                 circleSpawnedTime=Time.time;
                 spawnTime=Time.time;
@@ -191,6 +223,11 @@ public class WaveSpawn : MonoBehaviour
 
         return prefabs[0];
 
+    }
+
+    public bool GetPhaseStatus()
+    {
+        return phaseFinished;
     }
 
 }

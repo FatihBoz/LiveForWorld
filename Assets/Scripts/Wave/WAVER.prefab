@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaveInfos:
-  - SetWaveQuantity: 3
-    SetWaveCooldown: 10
+  - SetWaveQuantity: 2
+    SetWaveCooldown: 45
     CircleWaveQuantity: 0
     CircleWaveCooldown: 15
     NormalWaveQuantity: 20
