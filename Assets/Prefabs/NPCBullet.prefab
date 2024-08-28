@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 713030411001726766}
   - component: {fileID: 713030411001726767}
   - component: {fileID: 552284614}
-  - component: {fileID: 552284615}
+  - component: {fileID: 5508931417874005874}
   - component: {fileID: -5859160735960579865}
   m_Layer: 8
   m_Name: NPCBullet
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &552284615
+--- !u!114 &5508931417874005874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 713030411001726764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda088a1130891544b136cafdccd747d, type: 3}
+  m_Script: {fileID: 11500000, guid: e9ad6faca65817245abbca6c5d1c4311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 100

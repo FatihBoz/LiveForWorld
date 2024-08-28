@@ -255,6 +255,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 600193620}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: phaseCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266455299238072175, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
+      propertyPath: WaveInfos.Array.data[0].enemyRates.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad11cc31b0adb3498fe43dbd5611d52, type: 3}
 --- !u!4 &109162834 stripped

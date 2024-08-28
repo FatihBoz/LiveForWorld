@@ -11,9 +11,9 @@ public class ArcherEnemy : Enemy
     {
         StartCoroutine(WaitForAttack());
         Vector3 direction = target.position - transform.position;
-        direction.y = 0;
         direction.Normalize();
-        Instantiate(bulletPrefab, ShootPoint.position, Quaternion.LookRotation(direction));
+        GameObject bullet = Instantiate(bulletPrefab, ShootPoint.position, Quaternion.LookRotation(direction));
+        bullet.GetComponent<EnemyProjectile>().SetDamage(attackDamage);
     }
     private IEnumerator WaitForAttack()
     {
