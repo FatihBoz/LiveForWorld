@@ -117,6 +117,7 @@ public class WaveSpawn : MonoBehaviour
                 {
                     OnLastWaveSpawned?.Invoke();
                 }
+
                 setWaveTime=Time.time;
                 circleSpawnedTime=Time.time;
                 spawnTime=Time.time;
