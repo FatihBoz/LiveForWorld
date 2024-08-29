@@ -23,13 +23,23 @@ public class SceneManagement : MonoBehaviour
     private void Scene_OnSpaceShipCollapsed()
     {
         SpaceshipCollapsedScreen.SetActive(true);
+        CollapseAudioSources();
         StartCoroutine(Delay(2f));
+        ChangeScene();
     }
 
     private void Scene_OnPlayerDeath()
     {
         PlayerDeadScreen.SetActive(true);
-        StartCoroutine(Delay(2f));        
+        CollapseAudioSources();
+        
+        StartCoroutine(Delay(2f));     
+
+    }
+
+    private void CollapseAudioSources()
+    {
+        GameObject.FindGameObjectWithTag("Player").SetActive(false);
     }
 
     private void OnDisable()
@@ -47,6 +57,6 @@ public class SceneManagement : MonoBehaviour
     private IEnumerator Delay(float Delay)
     {
         yield return new WaitForSeconds(Delay);
-        ChangeScene();
+        Application.Quit(); 
     }
 }

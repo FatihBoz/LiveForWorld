@@ -59,6 +59,8 @@ public class CinematicManager : MonoBehaviour
             {
                 OnCinematicFinished?.Invoke();
                 OnCinematicFinished?.Invoke();
+
+                GameObject.FindGameObjectWithTag("Player").SetActive(false);
             }
     
         }
@@ -83,6 +85,7 @@ public class CinematicManager : MonoBehaviour
 
     private void Cinematic_Wave5Ended()
     {
+        GameObject.FindGameObjectWithTag("Player").SetActive(false);
         CinematicObject.SetActive(true);
         StartCoroutine(PlayCinematic());
     }

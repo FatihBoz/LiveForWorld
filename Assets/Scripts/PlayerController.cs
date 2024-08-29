@@ -40,8 +40,10 @@ public class PlayerController : MonoBehaviour
         {
             vcam.Follow = transform;
         }
-    }
 
+        Cursor.visible = false;
+    }
+    
     private void Move()
     {
         moveDirection = InputManager.Instance.GetMoveDirection();
